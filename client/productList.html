@@ -14,16 +14,20 @@
     <title>마켓 베스트</title>
   </head>
   <body>
-    <main class="max-w-[1920px] border-red-500">
-      <h1
-        class="mb-12 mt-12 text-center text-2xl font-semibold drop-shadow-2xl"
-      >
+    <main class="max-w-[1920px]">
+      <h1 class="mb-12 mt-12 text-center text-2xl font-semibold drop-shadow-md">
         베스트
       </h1>
       <section class="ml-auto mr-auto flex max-w-[1050px]">
         <nav class="w-1/4 text-base">
-          <div class="mr-12 h-12 border-b font-semibold leading-[48px]">
+          <div
+            class="mr-12 flex h-12 justify-between border-b font-semibold leading-[48px]"
+          >
             필터
+            <div class="flex items-center">
+              <img src="./assets/icons/reset.svg" alt="초기화" class="w-3" />
+              <span class="ml-1 text-xs text-grey0">초기화</span>
+            </div>
           </div>
           <ul class="mr-12 font-semibold">
             <li class="flex h-12 justify-between border-b leading-[48px]">
@@ -80,12 +84,12 @@
           <section class="mb-5 flex justify-between">
             <span class="font-semibold">총 525건</span>
             <ul class="flex space-x-2 text-grey0">
-              <li class="text-black">추천순</li>
-              <li>신상품순</li>
-              <li>판매량순</li>
-              <li>혜택순</li>
-              <li>낮은가격순</li>
-              <li>높은가격순</li>
+              <li class="border-r-2 pr-2 text-black">추천순</li>
+              <li class="border-r-2 pr-2">신상품순</li>
+              <li class="border-r-2 pr-2">판매량순</li>
+              <li class="border-r-2 pr-2">혜택순</li>
+              <li class="border-r-2 pr-2">낮은 가격순</li>
+              <li class="">높은 가격순</li>
             </ul>
           </section>
           <section>
@@ -93,13 +97,15 @@
               <li class="mr-4 w-[250px] flex-grow">
                 <figure>
                   <img
+                    cl
                     src="./assets/bacon/thumbnail.jpg"
                     alt="이미지"
-                    class="mb-4"
+                    class="mb-4 drop-shadow-md"
                   />
                   <figcaption>
                     <p>[풀무원] 탱탱쫄면(4개입)</p>
                     <p class="text-2xl font-semibold">4,980원</p>
+                    <p></p>
                     <p class="text-xs">튀기지 않아 부담없는 매콤함</p>
                   </figcaption>
                 </figure>
@@ -109,7 +115,7 @@
                   <img
                     src="./assets/bacon/thumbnail.jpg"
                     alt="이미지"
-                    class="mb-4"
+                    class="mb-4 drop-shadow-md"
                   />
                   <figcaption>
                     <p>[풀무원] 탱탱쫄면(4개입)</p>
@@ -123,7 +129,7 @@
                   <img
                     src="./assets/bacon/thumbnail.jpg"
                     alt="이미지"
-                    class="mb-4"
+                    class="mb-4 drop-shadow-md"
                   />
                   <figcaption>
                     <p>[풀무원] 탱탱쫄면(4개입)</p>
