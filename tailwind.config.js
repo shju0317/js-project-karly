@@ -14,6 +14,9 @@
           error: "#F03F40",
           orange: "#FA622F"
       },
+      content: {
+        'arrow' : 'url("/assets/icons/arrow_violet.svg")'
+      },
     },
     plugins: [],
   },
