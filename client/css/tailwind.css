@@ -1,6 +1,20 @@
 /* @import 'tailwindcss/base'; */
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* swiper 왼쪽 버튼 비활성화 적용 코드 */
+.swiper-button-prev.swiper-button-disabled {
+  @apply opacity-0;
+}
+
+/* swiper 오른쪽 버튼 비활성화 적용 코드 */
+.swiper-button-next.swiper-button-disabled {
+  @apply opacity-0;
+}
+
 
