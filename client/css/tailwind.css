@@ -6,6 +6,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply -font--lion-family;
+  }
+}
 
 /* swiper 왼쪽 버튼 비활성화 적용 코드 */
 .swiper-button-prev.swiper-button-disabled {
@@ -16,5 +21,6 @@
 .swiper-button-next.swiper-button-disabled {
   @apply opacity-0;
 }
+
 
 
