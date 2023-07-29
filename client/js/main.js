@@ -1,3 +1,7 @@
+import { getProductData } from '../lib/index.js';
+
+console.log(getProductData(10));
+
 
 /* 메인 상단 팝업 닫기 */
 const headerXbutton = document.querySelector('.headerPopup__xButton');
