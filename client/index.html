@@ -9,91 +9,182 @@
       href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
       type="image/xml+svg"
     />
+
+    <!-- swiper CDN -->
     <link
-      rel="preload"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./css/main.css" />
+    <!-- swiper CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <title>project Karly</title>
   </head>
   <body>
-    <div>
-      <span>지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</span>
-      <button>
-        <img src="./assets/images/xbox.svg" alt="" />
+    <!-- 메인 상단 팝업 -->
+    <div class="headerPopup flex w-full items-center justify-center bg-violet">
+      <span class="text-base text-white"
+        >지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</span
+      >
+      <button class="headerPopup__xButton">
+        <img src="./assets/images/xbox.svg" alt="닫기" />
       </button>
     </div>
-    <header class="headerWrapper">
-      <div class="loginWrapper">
-        <ul>
-          <li><a href="/">회원가입</a></li>
-          <li>ㅣ</li>
+    <!-- Header -->
+    <header class="headerWrapper mx-auto flex h-48 w-3/5 flex-col">
+      <div class="loginWrapper mb-8 mt-3 flex justify-end">
+        <ul class="flex flex-row text-xs text-black">
+          <li class="text-violet"><a href="/">회원가입</a></li>
+          <li class="aria-hidden text-grey4">ㅣ</li>
           <li><a href="/">로그인</a></li>
-          <li>ㅣ</li>
-          <li><a href="/">고객센터
-            <img src="./assets/images/downArrow.svg" alt="" />
-          </a></li>
+          <li class="aria-hidden text-grey4">ㅣ</li>
+          <li>
+            <a href="/" class="flex"
+              >고객센터<img
+                class="ml-1"
+                src="./assets/images/downArrow.svg"
+                alt=""
+              />
+            </a>
+          </li>
         </ul>
       </div>
-      <div class="searchWrapper">
-        <div class="logoWrapper">
+      <div
+        class="searchWrapper flex flex-row items-center justify-between text-xl"
+      >
+        <div class="logoWrapper flex flex-row items-center gap-3">
           <h1 class="logo">
             <a href="/">
               <img src="./assets/images/logo.svg" alt="칼리" />
             </a>
           </h1>
-          <ul>
-            <li><a href="/">마켓칼리</a></li>
-            <li>ㅣ</li>
-            <li><a href="/">뷰티칼리<sup><img src="./assets/images/new.svg" alt="" /><sup></a></li>
+          <ul class="flex flex-row">
+            <li class="font-semibold text-violet"><a href="/">마켓칼리</a></li>
+            <li class="aria-hidden font-normal text-grey4">ㅣ</li>
+            <li class="font-semibold">
+              <a href="/" class="relative text-grey1">
+                뷰티칼리
+                <img
+                  class="aria-hidden absolute -right-2 top-1"
+                  src="./assets/images/new.svg"
+                  alt="뷰티칼리 new"
+                />
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="searchFrom">
-          <input type="text" class="search-input" placeholder="검색어를 입력해주세요"/>
+        <div
+          class="searchFrom flex items-center justify-between rounded border-1px border-violet pl-3"
+          style="width: 402px; height: 50px"
+        >
+          <input
+            type="text"
+            class="bg-yellow search-input text-grey1 focus:outline-none"
+            placeholder="검색어를 입력해주세요"
+          />
           <button type="submit" class="search-button">
-            <img src="./assets/images/search.svg" alt="돋보기" />
+            <img src="./assets/images/search.svg" alt="검색" />
           </button>
         </div>
         <div>
-          <ul>
+          <ul class="flex flex-row gap-5">
             <li>
-              <a href="/"><img src="./assets/images/location.svg" alt=""/></a>
+              <a href="/"
+                ><img
+                  src="./assets/images/location.svg"
+                  alt="배송지 등록을 위한 주소 검색"
+              /></a>
             </li>
             <li>
-              <a href="/"><img src="./assets/images/heart.svg" alt="" /></a>
+              <a href="/"
+                ><img src="./assets/images/heart.svg" alt="찜한 상품"
+              /></a>
             </li>
             <li>
-              <a href="/"><img src="./assets/images/headerCart.svg" alt=""/></a>
+              <a href="/"
+                ><img src="./assets/images/headerCart.svg" alt="장바구니"
+              /></a>
             </li>
           </ul>
         </div>
       </div>
-      
-      <nav>
+
+      <!-- Main nav -->
+      <nav class="flex items-center justify-between py-4 text-base text-black">
         <div>
-          <ul>
-            <li><a href="/"><img src="./assets/images/hamburger.svg" alt="" />선물하기</a></li>
-            <li><a href="/"><img src="./assets/images/ca_01.svg" alt="" />채소</a></li>
-            <li><a href="/"><img src="./assets/images/ca_02.svg" alt="" />과일 · 견과 · 쌀</a></li>
-            <li><a href="/"><img src="./assets/images/ca_03.svg" alt="" />수산 · 해산 · 건어물</a></li>
-          </ul>
+          <div class="px-2 py-2 hover:text-violet">
+            <a href="">
+              <span class="flex gap-3 font-semibold">
+                <img
+                  class="aria-hidden"
+                  src="./assets/images/hamburger.svg"
+                  alt="카테고리"
+                />카테고리
+              </span>
+            </a>
+          </div>
         </div>
-        <ul>
-          <li><a href="">신상품</a></li>
-          <li><a href="">베스트</a></li>
-          <li><a href="">알뜰쇼핑</a></li>
-          <li><a href="">특가/혜택</a></li>
-          <li>
+        <!-- Main menu -->
+        <ul
+          class="ml-10 flex justify-between font-semibold"
+          style="width: 600px"
+        >
+          <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+            <a href="">신상품</a>
+          </li>
+          <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+            <a href="">베스트</a>
+          </li>
+          <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+            <a href="">알뜰쇼핑</a>
+          </li>
+          <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+            <a href="">특가/혜택</a>
+          </li>
         </ul>
-        <div>
-          <span class="font-bold text-cyan-400">샛별·낮</span>배송안내
+
+        <!-- 배송안내 -->
+        <div
+          class="flex w-28 justify-center rounded-2xl border-1px border-grey4 px-2 py-1 text-xs"
+        >
+          <a href="">
+            <span class="font-bold text-violet"> 샛별·낮</span>
+            <span> 배송안내 </span>
+          </a>
         </div>
       </nav>
     </header>
+
+    <!-- swiper slider 메인 배너 -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="w-full" src="./assets/images/banner01.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img class="w-full" src="./assets/images/banner02.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img class="w-full" src="./assets/images/banner03.svg" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img class="w-full" src="./assets/images/banner04.svg" alt="" />
+        </div>
+      </div>
+      <img
+        class="swiper-button-next"
+        style="margin-right: 15%; width: 50px; height: 50px"
+        src="./assets/images/next.svg"
+        alt="다음으로"
+      />
+      <img
+        class="swiper-button-prev"
+        style="margin-left: 15%; width: 50px; height: 50px"
+        src="./assets/images/prev.svg"
+        alt="이전으로"
+      />
+    </div>
   </body>
 </html>
