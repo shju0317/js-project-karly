@@ -159,7 +159,7 @@
     </header>
 
     <!-- swiper slider 메인 배너 -->
-    <div class="swiper">
+    <div class="swiper swiper1">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img class="w-full" src="./assets/images/banner01.svg" alt="" />
@@ -175,13 +175,13 @@
         </div>
       </div>
       <img
-        class="swiper-button-next"
+        class="swiper-button-next swiperNext1"
         style="margin-right: 15%; width: 50px; height: 50px"
         src="./assets/images/next.svg"
         alt="다음으로"
       />
       <img
-        class="swiper-button-prev"
+        class="swiper-button-prev swiperPrev1"
         style="margin-left: 15%; width: 50px; height: 50px"
         src="./assets/images/prev.svg"
         alt="이전으로"
@@ -567,39 +567,34 @@
         <div class="swiper-button-prev swiperPrev3 after:hidden bg-[url('../../assets/icons/arrow_prev.svg')] w-[60px] h-[60px] absolute top-[290px] -left-6"></div>
       </section>
 
-
-      <!-- 오른쪽 최근 본 상품 -->
-      <aside class="absolute border-[1px] top-48 right-10 p-[8px] w-[74px] h-[224px] border-solid border-black">
-        <h2 class="text-[12px] font-[600] text-center">최근 본 상품</h2>
-
-        <div class="swiper swiper4">
-          <div class="swiper-wrapper flex-col justify-center text-center items-center">
-            <div class="swiper-slide">
-              <a href="#">
-                <img class="w-[40px] h-[51px]" src="./assets/bacon/thumbnail.jpg" alt="#" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <img class="w-[40px] h-[51px]" src="./assets/tangtang/thumbnail.jpg" alt="#" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <img class="w-[40px] h-[51px]" src="./assets/ubuho/thumbnail.jpg" alt="#" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 최근 본 항목 슬라이더 -->
-        <div class="swiper-button-next swiperNext4 after:hidden bg-[url('../../assets/icons/direction_up.svg')] w-[18px] h-[18px] absolute p-[4px] top-[30px] left-[26px]"></div>
-        <div class="swiper-button-prev swiperPrev4 after:hidden bg-[url('../../assets/icons/direction_down.svg')] w-[18px] h-[18px] absolute top-[220px] left-[26px]"></div>
-      </aside>
-
-
     </main>
 
+    <div class="w-[74px] h-[223px] fixed top-1/2 right-[40px] z-10 border-1px border-grey2 py-[34px] ">
+      <h2 class="text-[12px] text-[600] text-center">최근 본 상품</h2>
+      <div class="swiper swiper4 flex-col w-[40px] h-[129px] m-[8px] mx-auto ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/bacon/thumbnail.jpg" alt=""/></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/tangtang/thumbnail.jpg" alt=""/></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-prev swiperPrev4 bg-[url('../../assets/icons/direction_up.svg')] bg-center w-[18px] h-[18px] bg-no-repeat after:hidden p-[4px] left-1/2 top-[34px] -translate-x-1/2"></div>
+      <div class="swiper-button-next swiperNext4 bg-[url('../../assets/icons/direction_down.svg')] bg-center w-[18px] h-[18px] bg-no-repeat after:hidden p-[4px] left-1/2 top-[220px] -translate-x-1/2"></div>
+    </div>
 
   </body>
 </html>
