@@ -580,6 +580,10 @@ html{
   left: 50%;
 }
 
+.right-\[15px\]{
+  right: 15px;
+}
+
 .right-\[40px\]{
   right: 40px;
 }
@@ -596,20 +600,16 @@ html{
   top: 220px;
 }
 
+.top-\[258px\]{
+  top: 258px;
+}
+
 .top-\[290px\]{
   top: 290px;
 }
 
 .top-\[34px\]{
   top: 34px;
-}
-
-.right-\[15px\]{
-  right: 15px;
-}
-
-.top-\[258px\]{
-  top: 258px;
 }
 
 .z-30{
@@ -697,6 +697,10 @@ html{
   margin-right: 0.5rem;
 }
 
+.mr-\[8px\]{
+  margin-right: 8px;
+}
+
 .mr-auto{
   margin-right: auto;
 }
@@ -709,20 +713,16 @@ html{
   margin-top: 0.75rem;
 }
 
+.mt-\[16px\]{
+  margin-top: 16px;
+}
+
 .mt-\[40px\]{
   margin-top: 40px;
 }
 
 .mt-\[50px\]{
   margin-top: 50px;
-}
-
-.mr-\[8px\]{
-  margin-right: 8px;
-}
-
-.mt-\[16px\]{
-  margin-top: 16px;
 }
 
 .mt-\[8px\]{
@@ -1095,6 +1095,14 @@ html{
   font-size: 12px;
 }
 
+.text-\[16px\]{
+  font-size: 16px;
+}
+
+.text-\[22px\]{
+  font-size: 22px;
+}
+
 .text-\[30px\]{
   font-size: 30px;
 }
@@ -1114,12 +1122,8 @@ html{
   line-height: 1rem;
 }
 
-.text-\[16px\]{
-  font-size: 16px;
-}
-
-.text-\[22px\]{
-  font-size: 22px;
+.font-\[600\]{
+  font-weight: 600;
 }
 
 .font-\[700\]{
@@ -1135,10 +1139,6 @@ html{
 }
 
 .font-semibold{
-  font-weight: 600;
-}
-
-.font-\[600\]{
   font-weight: 600;
 }
 

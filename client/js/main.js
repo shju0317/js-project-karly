@@ -1,4 +1,4 @@
-import { attr, getNode, getNodes, getProductData, insertFirst, insertLast, renderProduct, tiger } from '../lib/index.js';
+import { getNode, getProductData, insertFirst, insertLast, renderProduct, tiger } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
@@ -23,22 +23,16 @@ headerXbutton.addEventListener('click',handleRemovePopup)
 
 
 
-const swiperWrapper2 = getNode('.swiperWrapperTwo')
-const swiperWrapper3 = getNode('.swiperWrapperThree')
+const swiperWrapper1 = getNode('.swiperWrapperOne')
 
 async function renderItemList(){
   const response = await tiger.get('http://localhost:3000/products')    // promise 객체
   const itemList = response.data;
 
 	itemList.forEach((item)=>{
-		renderProduct(swiperWrapper2, item)
-		// renderProduct(swiperWrapper2, item)
-  })
-	itemList.forEach((item)=>{
-		// renderProduct(swiperWrapper1, item)
-		renderProduct(swiperWrapper3, item)
+		renderProduct(swiperWrapper1, item)
+		
   })
 }
 
 renderItemList();
-
