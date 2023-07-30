@@ -717,6 +717,10 @@ html{
   margin-top: 8px;
 }
 
+.mb-4{
+  margin-bottom: 1rem;
+}
+
 .block{
   display: block;
 }
@@ -727,6 +731,10 @@ html{
 
 .inline-flex{
   display: inline-flex;
+}
+
+.table{
+  display: table;
 }
 
 .h-11{
@@ -839,6 +847,15 @@ html{
 
 .w-full{
   width: 100%;
+}
+
+.w-max{
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.w-\[400px\]{
+  width: 400px;
 }
 
 .max-w-2xl{

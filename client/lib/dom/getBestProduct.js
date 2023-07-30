@@ -8,12 +8,15 @@ function createProduct(item){
 		const template = /*html*/ `
     <li class="w-[250px]">
     <a href="#">
-      <figure>
+      <figure class="relative">
         <img
           src="./assets/${item.image.thumbnail}"
           alt="${item.image.alt}"
-          class="relative mb-4 drop-shadow-md"
+          class="mb-4 drop-shadow-md"
         />
+        <button class="absolute right-4">
+            <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+        </button>
         <figcaption class="flex flex-col gap-2">
           <span>${item.name}</span>
           <div>
@@ -37,9 +40,6 @@ function createProduct(item){
           ${ !item.name.toLowerCase().includes("kalry") ? '' : 
           /* html */`<span class="rounded bg-grey3 p-1 text-xs font-semibold text-violet">Karly Only</span>`}
           </div>
-          <button class="absolute right-4">
-            <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
-          </button>
         </figcaption>
       </figure>
     </a>
@@ -53,17 +53,12 @@ export function renderProduct(target, data){
 }
 
 
-/* 상품 수량 */
-// function getProductQuantity(){  
-//   return bestProductQuantity;
-// }
-
+/* 상품 수량 불러오기 및 렌더링 */
 export function renderProductQuantity(itemList) {
   const bestProductQuantity = getNode('.bestProductQuantity');
 
   let quantity = bestProductQuantity.textContent;
   quantity = `총 ${itemList.length}건`;
   insertFirst(bestProductQuantity, quantity);
-  return '성공';
 }
 
