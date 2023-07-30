@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-    <title>마켓칼리 | 회원가입</title>
+    <title>회원가입 - 칼리</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <script src="lib/dom/register.js"></script>
+    <script type="module" src="lib/dom/register.js" defer></script>
   </head>
   <body>
+    <!-- 메인 상단 팝업 -->
+    <div class="headerPopup flex w-full items-center justify-center bg-violet">
+      <span class="text-base text-white"
+        >지금 가입하고 인기상품 <b>100원</b>에 받아가세요!</span
+      >
+      <button class="headerPopup__xButton">
+        <img src="./assets/images/xbox.svg" alt="닫기" />
+      </button>
+    </div>
         <!-- Header -->
         <header class="headerWrapper mx-auto flex h-48 w-3/5 flex-col">
           <div class="loginWrapper mb-8 mt-3 flex justify-end">
@@ -322,7 +331,7 @@
                 <label
                   ><input
                     type="checkbox"
-                    name="essential"
+                    class="agreement"
                   />
                   이용약관 동의 (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow""
@@ -332,7 +341,7 @@
                 <label
                   ><input
                     type="checkbox"
-                    name="essential"
+                    class="agreement"
                   />
                   개인정보 수집 · 이용 동의 (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow""
@@ -342,7 +351,7 @@
                 <label>
                   <input
                     type="checkbox"
-                    name="essential"
+                    class="agreement"
                   />
                   무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)</label
                 >
@@ -353,7 +362,7 @@
                 <label
                   ><input
                     type="checkbox"
-                    name="essential"
+                    class="agreement"
                   />
                   본인은 만 14세 이상입니다. (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow"
