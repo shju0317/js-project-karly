@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-      type="image/xml+svg"
-    />
+    <link rel="icon" href="./assets/favicon.ico" type="image/xml+svg" />
 
     <!-- swiper CDN -->
     <link
@@ -19,10 +15,10 @@
     <link rel="stylesheet" href="./css/main.css" />
     <!-- swiper CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./js/main.js" type="module"></script> 
+    <script src="./js/main.js" type="module"></script>
     <title>Project Karly</title>
   </head>
-  
+
   <body>
     <!-- 메인 상단 팝업 -->
     <div class="headerPopup flex w-full items-center justify-center bg-violet">
@@ -37,7 +33,9 @@
     <header class="headerWrapper mx-auto flex h-48 w-3/5 flex-col">
       <div class="loginWrapper mb-8 mt-3 flex justify-end">
         <ul class="flex flex-row text-xs text-black">
-          <li class="text-violet"><a href="/">회원가입</a></li>
+          <li class="text-violet">
+            <a href="http://localhost:5500/register.html">회원가입</a>
+          </li>
           <li class="aria-hidden text-grey4">ㅣ</li>
           <li><a href="/">로그인</a></li>
           <li class="aria-hidden text-grey4">ㅣ</li>
@@ -133,10 +131,10 @@
           style="width: 600px"
         >
           <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
-            <a href="">신상품</a>
+            <a href="/">신상품</a>
           </li>
           <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
-            <a href="">베스트</a>
+            <a href="http://localhost:5500/productList.html">베스트</a>
           </li>
           <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
             <a href="">알뜰쇼핑</a>
@@ -188,94 +186,132 @@
       />
     </div>
 
-
     <!-- 메인 -->
-    <main class="inline-flex flex-col w-full items-center">
-
+    <main class="inline-flex w-full flex-col items-center">
       <!-- 이 상품 어때요 영역 + 상단 슬라이더 -->
       <section class="relative w-[1050px]">
-        <h2 class="p-[8px] mt-[40px] mb-[28px] font-[700] text-[30px] text-center">이 상품 어때요?</h2>
-  
-        <!-- 상단 아이템 슬라이더 -->
-        <div class="w-auto swiper swiper2">
-          <div class="swiper-wrapper">
+        <h2
+          class="mb-[28px] mt-[40px] p-[8px] text-center text-[30px] font-[700]"
+        >
+          이 상품 어때요?
+        </h2>
 
+        <!-- 상단 아이템 슬라이더 -->
+        <div class="swiper swiper2 w-auto">
+          <div class="swiper-wrapper">
             <!-- 슬라이드 1 :: 유부 -->
             <div class="swiper-slide w-[250px]">
               <a href="#">
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-            
+
             <!-- 슬라이드 2 :: 쫄면 -->
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <!-- 슬라이드 3 :: 쭈꾸미 -->
             <div class="swiper-slide w-[250px]">
               <a href="#">
                 <img src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[홍대주꾸미] 주꾸미 볶음 300g</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">13%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">6,800원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">7,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >13%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >6,800원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >7,900 원</span
+                  >
                 </div>
               </a>
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <!-- 슬라이드 4 :: 갈비찜 -->
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img  src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                <img
+                  src="./assets/kangnam/thumbnail.jpg"
+                  alt="강남면옥 소갈비찜"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[강남면옥] 소갈비찜</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">29,800원</span>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >29,800원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <!-- 슬라이드 5 :: 베이컨 -->
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
+                <img
+                  src="./assets/bacon/thumbnail.jpg"
+                  alt="칼리 한돈 삼겹 베이컨"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[Kalry's] 한돈 삼겹 베이컨</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">25%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">3,375원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">4,500 원</span>                
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >25%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >3,375원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >4,500 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -285,57 +321,86 @@
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
-                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
-              </button>
-            </div>
-  
-            <div class="swiper-slide w-[250px]">
-              <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-                <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
-                </div>
-              </a>
-              <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
 
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img  src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
+                <div class="mt-[16px]">
+                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
+                </div>
+              </a>
+              <!-- 장바구니 아이콘 -->
+              <button class="absolute right-[15px] top-[258px]">
+                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+              </button>
+            </div>
+
+            <div class="swiper-slide w-[250px]">
+              <a href="#">
+                <img
+                  src="./assets/kangnam/thumbnail.jpg"
+                  alt="강남면옥 소갈비찜"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[강남면옥] 소갈비찜</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">29,800원</span>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >29,800원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
+                <img
+                  src="./assets/bacon/thumbnail.jpg"
+                  alt="칼리 한돈 삼겹 베이컨"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[Kalry's] 한돈 삼겹 베이컨</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">25%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">3,375원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">4,500 원</span>               
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >25%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >3,375원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >4,500 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -345,126 +410,185 @@
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
-                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
-              </button>
-            </div>
-  
-            <div class="swiper-slide w-[250px]">
-              <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-                <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
-                </div>
-              </a>
-              <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
 
+            <div class="swiper-slide w-[250px]">
+              <a href="#">
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
+                <div class="mt-[16px]">
+                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
+                </div>
+              </a>
+              <!-- 장바구니 아이콘 -->
+              <button class="absolute right-[15px] top-[258px]">
+                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 상단 슬라이더 버튼 -->
-        <div class="swiper-button-next swiperNext2 after:hidden bg-[url('../../assets/icons/arrow_next.svg')] w-[60px] h-[60px] absolute top-[290px] -right-6"></div>
-        <div class="swiper-button-prev swiperPrev2 after:hidden bg-[url('../../assets/icons/arrow_prev.svg')] w-[60px] h-[60px] absolute top-[290px] -left-6"></div>
+        <div
+          class="swiper-button-next swiperNext2 absolute -right-6 top-[290px] h-[60px] w-[60px] bg-[url('../../assets/icons/arrow_next.svg')] after:hidden"
+        ></div>
+        <div
+          class="swiper-button-prev swiperPrev2 absolute -left-6 top-[290px] h-[60px] w-[60px] bg-[url('../../assets/icons/arrow_prev.svg')] after:hidden"
+        ></div>
       </section>
 
-  
       <!-- 중앙 광고 배너 -->
       <section class="my-[40px]">
         <a href="#">
-          <img src="./assets/images/purpleBanner.svg" alt="더 풍성해진 10월의 퍼플위크 광고 배너"/>
+          <img
+            src="./assets/images/purpleBanner.svg"
+            alt="더 풍성해진 10월의 퍼플위크 광고 배너"
+          />
         </a>
       </section>
 
-
       <!-- 놓치면 후회할 가격 + 하단 슬라이더 -->
       <section class="relative w-[1050px]">
-        <h2 class="p-[8px] mt-[40px] mb-[28px] font-[700] text-[30px] text-center">놓치면 후회할 가격</h2>
-  
+        <h2
+          class="mb-[28px] mt-[40px] p-[8px] text-center text-[30px] font-[700]"
+        >
+          놓치면 후회할 가격
+        </h2>
+
         <!-- 하단 슬라이더 -->
-        <div class="w-auto swiper swiper3">
+        <div class="swiper swiper3 w-auto">
           <div class="swiper-wrapper">
             <div class="swiper-slide w-[250px]">
               <a href="#">
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-            
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
                 <img src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[홍대주꾸미] 주꾸미 볶음 300g</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">13%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">6,800원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">7,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >13%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >6,800원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >7,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img  src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                <img
+                  src="./assets/kangnam/thumbnail.jpg"
+                  alt="강남면옥 소갈비찜"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[강남면옥] 소갈비찜</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">29,800원</span>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >29,800원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
+                <img
+                  src="./assets/bacon/thumbnail.jpg"
+                  alt="칼리 한돈 삼겹 베이컨"
+                />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[Kalry's] 한돈 삼겹 베이컨</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">25%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">3,375원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">4,500 원</span>                </div>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >25%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >3,375원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >4,500 원</span
+                  >
+                </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -474,56 +598,86 @@
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
-                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
-              </button>
-            </div>
-  
-            <div class="swiper-slide w-[250px]">
-              <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-                <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
-                </div>
-              </a>
-              <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
 
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img  src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
                 <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[강남면옥] 소갈비찜</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">29,800원</span>
+                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
-  
+
             <div class="swiper-slide w-[250px]">
               <a href="#">
-                <img src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
+                <img
+                  src="./assets/kangnam/thumbnail.jpg"
+                  alt="강남면옥 소갈비찜"
+                />
                 <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[Kalry's] 한돈 삼겹 베이컨</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">25%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">3,375원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">4,500 원</span>                </div>
+                  <h3 class="text-[16px]">[강남면옥] 소갈비찜</h3>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >29,800원</span
+                  >
+                </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
+                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+              </button>
+            </div>
+
+            <div class="swiper-slide w-[250px]">
+              <a href="#">
+                <img
+                  src="./assets/bacon/thumbnail.jpg"
+                  alt="칼리 한돈 삼겹 베이컨"
+                />
+                <div class="mt-[16px]">
+                  <h3 class="text-[16px]">[Kalry's] 한돈 삼겹 베이컨</h3>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >25%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >3,375원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >4,500 원</span
+                  >
+                </div>
+              </a>
+              <!-- 장바구니 아이콘 -->
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -533,68 +687,87 @@
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
                   <h3 class="text-[16px]">[대구 반할만떡] 유부호만두</h3>
-                  <span class="my-[8px] font-[600] mr-[8px] text-[22px] text-orange">24%</span>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">5,244원</span>
-                  <span class="my-[8px] flex mt-[8px] text-[12px] line-through text-grey1">6,900 원</span>
+                  <span
+                    class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
+                    >24%</span
+                  >
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >5,244원</span
+                  >
+                  <span
+                    class="my-[8px] mt-[8px] flex text-[12px] text-grey1 line-through"
+                    >6,900 원</span
+                  >
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
-                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
-              </button>
-            </div>
-  
-            <div class="swiper-slide w-[250px]">
-              <a href="#">
-                <img src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-                <div class="mt-[16px]">
-                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
-                  <span class="my-[8px] font-[600] mt-[8px] text-[22px]">4,980원</span>
-                </div>
-              </a>
-              <!-- 장바구니 아이콘 -->
-              <button class="absolute top-[258px] right-[15px]">
+              <button class="absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
 
+            <div class="swiper-slide w-[250px]">
+              <a href="#">
+                <img
+                  src="./assets/tangtang/thumbnail.jpg"
+                  alt="풀무원 탱탱쫄면"
+                />
+                <div class="mt-[16px]">
+                  <h3 class="text-[16px]">[풀무원] 탱탱쫄면 (4개입)</h3>
+                  <span class="my-[8px] mt-[8px] text-[22px] font-[600]"
+                    >4,980원</span
+                  >
+                </div>
+              </a>
+              <!-- 장바구니 아이콘 -->
+              <button class="absolute right-[15px] top-[258px]">
+                <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+              </button>
+            </div>
           </div>
         </div>
 
-
         <!-- 하단 슬라이더 조절 버튼 -->
-        <div class="swiper-button-next swiperNext3 after:hidden bg-[url('../../assets/icons/arrow_next.svg')] w-[60px] h-[60px] absolute top-[290px] -right-6"></div>
-        <div class="swiper-button-prev swiperPrev3 after:hidden bg-[url('../../assets/icons/arrow_prev.svg')] w-[60px] h-[60px] absolute top-[290px] -left-6"></div>
+        <div
+          class="swiper-button-next swiperNext3 absolute -right-6 top-[290px] h-[60px] w-[60px] bg-[url('../../assets/icons/arrow_next.svg')] after:hidden"
+        ></div>
+        <div
+          class="swiper-button-prev swiperPrev3 absolute -left-6 top-[290px] h-[60px] w-[60px] bg-[url('../../assets/icons/arrow_prev.svg')] after:hidden"
+        ></div>
       </section>
-
     </main>
 
-    <div class="w-[74px] h-[223px] fixed top-1/2 right-[40px] z-10 border-1px border-grey2 py-[34px] ">
-      <h2 class="text-[12px] text-[600] text-center">최근 본 상품</h2>
-      <div class="swiper swiper4 flex-col w-[40px] h-[129px] m-[8px] mx-auto ">
+    <div
+      class="fixed right-[40px] top-1/2 z-10 h-[223px] w-[74px] border-1px border-grey2 py-[34px]"
+    >
+      <h2 class="text-center text-[12px] text-[600]">최근 본 상품</h2>
+      <div class="swiper swiper4 m-[8px] mx-auto h-[129px] w-[40px] flex-col">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="#"><img src="./assets/bacon/thumbnail.jpg" alt=""/></a>
+            <a href="#"><img src="./assets/bacon/thumbnail.jpg" alt="" /></a>
           </div>
           <div class="swiper-slide">
-            <a href="#"><img src="./assets/tangtang/thumbnail.jpg" alt=""/></a>
+            <a href="#"><img src="./assets/tangtang/thumbnail.jpg" alt="" /></a>
           </div>
           <div class="swiper-slide">
-            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt="" /></a>
           </div>
 
           <div class="swiper-slide">
-            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt="" /></a>
           </div>
           <div class="swiper-slide">
-            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt=""/></a>
+            <a href="#"><img src="./assets/ubuho/thumbnail.jpg" alt="" /></a>
           </div>
         </div>
       </div>
 
-      <div class="swiper-button-prev swiperPrev4 bg-[url('../../assets/icons/direction_up.svg')] bg-center w-[18px] h-[18px] bg-no-repeat after:hidden p-[4px] left-1/2 top-[34px] -translate-x-1/2"></div>
-      <div class="swiper-button-next swiperNext4 bg-[url('../../assets/icons/direction_down.svg')] bg-center w-[18px] h-[18px] bg-no-repeat after:hidden p-[4px] left-1/2 top-[220px] -translate-x-1/2"></div>
+      <div
+        class="swiper-button-prev swiperPrev4 left-1/2 top-[34px] h-[18px] w-[18px] -translate-x-1/2 bg-[url('../../assets/icons/direction_up.svg')] bg-center bg-no-repeat p-[4px] after:hidden"
+      ></div>
+      <div
+        class="swiper-button-next swiperNext4 left-1/2 top-[220px] h-[18px] w-[18px] -translate-x-1/2 bg-[url('../../assets/icons/direction_down.svg')] bg-center bg-no-repeat p-[4px] after:hidden"
+      ></div>
     </div>
-
   </body>
 </html>
