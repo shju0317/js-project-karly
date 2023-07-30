@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <title>마켓칼리 | 회원가입</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="lib/dom/register.js"></script>
   </head>
   <body>
         <!-- Header -->
@@ -308,8 +309,8 @@
             </p>
             <ul class="max-w-2xll w-ful">
               <li class="flex flex-col gap-1">
-                <label for="checkAll" class="text-xl font-semibold"
-                  ><input type="checkbox" name="checkAll" id="checkAll" /> 전체
+                <label class="text-xl font-semibold"
+                  ><input type="checkbox" name="checkAll" id="rester-check-all"/> 전체
                   동의합니다.</label
                 >
                 <p class="pl-5 text-xs text-grey1">
@@ -318,36 +319,30 @@
                 </p>
               </li>
               <li class="my-3 flex justify-between">
-                <label for="essential_1" class=""
+                <label
                   ><input
                     type="checkbox"
-                    name="essential_1"
-                    id="essential_1"
-                    class="join-checkbox"
+                    name="essential"
                   />
                   이용약관 동의 (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow""
                   >약관보기</a>
               </li>
               <li class="my-3 flex justify-between">
-                <label for="essential_2" class=""
+                <label
                   ><input
                     type="checkbox"
-                    name="essential_2"
-                    id="essential_2"
-                    class=""
+                    name="essential"
                   />
                   개인정보 수집 · 이용 동의 (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow""
                   >약관보기</a>
               </li>
               <li class="my-3 flex justify-between">
-                <label for="essential_3" class="">
+                <label>
                   <input
                     type="checkbox"
-                    name="essential_3"
-                    id="essential_3"
-                    class=""
+                    name="essential"
                   />
                   무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)</label
                 >
@@ -355,12 +350,10 @@
                   >약관보기</a>
               </li>
               <li class="my-3 flex justify-between">
-                <label for="essential_4" class=""
+                <label
                   ><input
                     type="checkbox"
-                    name="essential_4"
-                    id="essential_4"
-                    class=""
+                    name="essential"
                   />
                   본인은 만 14세 이상입니다. (필수)</label
                 ><a href="#" class="flex gap-1 text-violet after:content-arrow"
