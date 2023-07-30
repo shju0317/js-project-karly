@@ -1,7 +1,5 @@
 import { getProductData } from '../lib/index.js';
 
-console.log(getProductData(10));
-
 
 /* 메인 상단 팝업 닫기 */
 const headerXbutton = document.querySelector('.headerPopup__xButton');
@@ -20,7 +18,7 @@ headerXbutton.addEventListener('click',handleRemovePopup)
 
 
 /* 메인 배너 Swiper */
-new Swiper('.swiper', {
+new Swiper('.swiper1', {
   keyboard: {
     enabled: true,
 },
@@ -33,8 +31,8 @@ new Swiper('.swiper', {
   },
   loop:true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiperNext1",
+    prevEl: ".swiperPrev1",
   },
 })
 
