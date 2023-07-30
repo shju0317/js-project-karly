@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <title>마켓칼리 | 회원가입</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="lib/dom/register.js"></script>
+  </head>
+  <body>
+        <!-- Header -->
+        <header class="headerWrapper mx-auto flex h-48 w-3/5 flex-col">
+          <div class="loginWrapper mb-8 mt-3 flex justify-end">
+            <ul class="flex flex-row text-xs text-black">
+              <li class="text-violet"><a href="/">회원가입</a></li>
+              <li class="aria-hidden text-grey4">ㅣ</li>
+              <li><a href="/">로그인</a></li>
+              <li class="aria-hidden text-grey4">ㅣ</li>
+              <li>
+                <a href="/" class="flex"
+                  >고객센터<img
+                    class="ml-1"
+                    src="./assets/images/downArrow.svg"
+                    alt=""
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="searchWrapper flex flex-row items-center justify-between text-xl"
+          >
+            <div class="logoWrapper flex flex-row items-center gap-3">
+              <h1 class="logo">
+                <a href="/">
+                  <img src="./assets/images/logo.svg" alt="칼리" />
+                </a>
+              </h1>
+              <ul class="flex flex-row">
+                <li class="font-semibold text-violet"><a href="/">마켓칼리</a></li>
+                <li class="aria-hidden font-normal text-grey4">ㅣ</li>
+                <li class="font-semibold">
+                  <a href="/" class="relative text-grey1">
+                    뷰티칼리
+                    <img
+                      class="aria-hidden absolute -right-2 top-1"
+                      src="./assets/images/new.svg"
+                      alt="뷰티칼리 new"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="searchFrom flex items-center justify-between rounded border-1px border-violet pl-3"
+              style="width: 402px; height: 50px"
+            >
+              <input
+                type="text"
+                class="bg-yellow search-input text-grey1 focus:outline-none"
+                placeholder="검색어를 입력해주세요"
+              />
+              <button type="submit" class="search-button">
+                <img src="./assets/images/search.svg" alt="검색" />
+              </button>
+            </div>
+            <div>
+              <ul class="flex flex-row gap-5">
+                <li>
+                  <a href="/"
+                    ><img
+                      src="./assets/images/location.svg"
+                      alt="배송지 등록을 위한 주소 검색"
+                  /></a>
+                </li>
+                <li>
+                  <a href="/"
+                    ><img src="./assets/images/heart.svg" alt="찜한 상품"
+                  /></a>
+                </li>
+                <li>
+                  <a href="/"
+                    ><img src="./assets/images/headerCart.svg" alt="장바구니"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Main nav -->
+          <nav class="flex items-center justify-between py-4 text-base text-black">
+            <div>
+              <div class="px-2 py-2 hover:text-violet">
+                <a href="">
+                  <span class="flex gap-3 font-semibold">
+                    <img
+                      class="aria-hidden"
+                      src="./assets/images/hamburger.svg"
+                      alt="카테고리"
+                    />카테고리
+                  </span>
+                </a>
+              </div>
+            </div>
+            <!-- Main menu -->
+            <ul
+              class="ml-10 flex justify-between font-semibold"
+              style="width: 600px"
+            >
+              <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+                <a href="">신상품</a>
+              </li>
+              <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+                <a href="">베스트</a>
+              </li>
+              <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+                <a href="">알뜰쇼핑</a>
+              </li>
+              <li class="py-2 underline-offset-4 hover:text-violet hover:underline">
+                <a href="">특가/혜택</a>
+              </li>
+            </ul>
+    
+            <!-- 배송안내 -->
+            <div
+              class="flex w-28 justify-center rounded-2xl border-1px border-grey4 px-2 py-1 text-xs"
+            >
+              <a href="">
+                <span class="font-bold text-violet"> 샛별·낮</span>
+                <span> 배송안내 </span>
+              </a>
+            </div>
+          </nav>
+        </header>
+    <!-- Header 끝-->
+    <main class="flex h-screen items-start md:items-center md:justify-center">
+      <section class="w-full md:mx-auto md:max-w-screen-sm">
+        <h1 class="text-center text-xl font-semibold">회원가입</h1>
+        <p class="mb-2 text-right text-xs font-semibold">
+          <span class="text-error">*</span>필수입력사항
+        </p>
+        <form class="clear-both">
+          <!-- 회원가입 입력 -->
+          <fieldset class="border-b border-t-2 border-black">
+            <legend class="sr-only">회원가입 정보 입력 폼</legend>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">
+                아이디<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <input
+                type="text"
+                placeholder="아이디를 입력해주세요"
+                class="w-full max-w-xs rounded border border-grey0 px-5"
+              />
+              <button
+                type="button"
+                class="w-36 rounded border border-violet font-semibold text-violet"
+              >
+                중복확인
+              </button>
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">
+                비밀번호<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <input
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+                class="form-input w-full max-w-xs rounded border border-grey0 px-5"
+              />
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">
+                비밀번호 확인<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <input
+                type="password"
+                placeholder="비밀번호를 한번 더 입력해주세요"
+                class="form-input w-full max-w-xs rounded border border-grey0 px-5"
+              />
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">
+                이메일<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <input
+                type="text"
+                placeholder="예) marketkarly@karly.com"
+                class="w-full max-w-xs rounded border border-grey0 px-5"
+              />
+              <button
+                type="button"
+                class="w-36 rounded border border-violet font-semibold text-violet"
+              >
+                중복확인
+              </button>
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">
+                휴대폰<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <input
+                type="text"
+                placeholder="숫자만 입력해주세요"
+                class="w-full max-w-xs rounded border border-grey0 px-5"
+              />
+              <button
+                type="button"
+                class="w-36 rounded border border-violet font-semibold text-violet"
+              >
+                인증번호 받기
+              </button>
+            </div>
+            <div class="my-5 flex h-16 max-w-2xl gap-2">
+              <p class="w-36 py-2 font-semibold">
+                주소<span
+                  class="pl-1 font-semibold text-error"
+                  aria-label="필수 입력 사항"
+                  >*</span
+                >
+              </p>
+              <div class="flex w-full max-w-xs flex-col gap-1">
+                <button
+                  type="button"
+                  class="h-11 rounded border border-violet font-semibold text-violet"
+                >
+                  주소 검색
+                </button>
+                <span class="text-xs"
+                  >배송지에 따라 상품 정보가 달라질 수 있습니다.</span
+                >
+              </div>
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2 font-semibold">
+              <p class="w-36 py-2 text-base">성별</p>
+              <div class="flex w-full max-w-xs justify-between py-2">
+                <label
+                  ><input
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    class="mr-2"
+                  />남자</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    class="mr-2"
+                  />여자</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="gender"
+                    id="no"
+                    class="mr-2"
+                  />선택안함</label
+                >
+              </div>
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2">
+              <p class="w-36 py-2 text-base font-semibold">생년월일</p>
+              <input type="text" placeholder="YYYY   /   MM   /   DD" />
+            </div>
+            <div class="my-5 flex h-11 max-w-2xl gap-2 font-semibold">
+              <p class="w-36 py-2">추가입력 사항</p>
+              <div class="flex w-full max-w-xs justify-between py-2">
+                <label class="gap-2"
+                  ><input type="radio" name="more" class="mr-2" />친구초대
+                  추천인 아이디</label
+                >
+                <label
+                  ><input type="radio" name="more" class="mr-2" />참여
+                  이벤트명</label
+                >
+              </div>
+            </div>
+          </fieldset>
+          <div
+            role="group"
+            class="my-5 flex h-full max-w-2xl gap-2 border-b border-grey2 py-5"
+          >
+            <!-- <legend class="sr-only">약관 동의 체크 리스트</legend> -->
+            <p class="w-36 py-2 text-base font-semibold">
+              이용약관동의<span class="pl-1 font-semibold text-error">*</span>
+            </p>
+            <ul class="max-w-2xll w-ful">
+              <li class="flex flex-col gap-1">
+                <label class="text-xl font-semibold"
+                  ><input type="checkbox" name="checkAll" id="rester-check-all"/> 전체
+                  동의합니다.</label
+                >
+                <p class="pl-5 text-xs text-grey1">
+                  선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를
+                  이용할 수 있습니다.
+                </p>
+              </li>
+              <li class="my-3 flex justify-between">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="essential"
+                  />
+                  이용약관 동의 (필수)</label
+                ><a href="#" class="flex gap-1 text-violet after:content-arrow""
+                  >약관보기</a>
+              </li>
+              <li class="my-3 flex justify-between">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="essential"
+                  />
+                  개인정보 수집 · 이용 동의 (필수)</label
+                ><a href="#" class="flex gap-1 text-violet after:content-arrow""
+                  >약관보기</a>
+              </li>
+              <li class="my-3 flex justify-between">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="essential"
+                  />
+                  무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)</label
+                >
+                <a href="#" class="flex gap-1 text-violet after:content-arrow""
+                  >약관보기</a>
+              </li>
+              <li class="my-3 flex justify-between">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="essential"
+                  />
+                  본인은 만 14세 이상입니다. (필수)</label
+                ><a href="#" class="flex gap-1 text-violet after:content-arrow"
+                  >약관보기</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button
+            class="mx-auto block h-14 w-80 rounded bg-violet font-semibold text-white"
+          >
+            가입하기
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
