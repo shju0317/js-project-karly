@@ -1,4 +1,4 @@
-import { getNode, bindEvent } from '../../lib/index.js';
+import { getNode, bindEvent, insertFirst } from '../../lib/index.js';
 
 
 /* 상품 수량 불러오기 및 렌더링 */
