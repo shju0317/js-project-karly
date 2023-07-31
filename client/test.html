@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <ul class="flex space-x-2 text-grey0">
+      <li class="w-[250px]">
+        <a href="#">
+          <figure class="relative">
+            <img
+              src="./assets/bacon/thumbnail.jpg"
+              alt="이미지"
+              class="mb-4 drop-shadow-md"
+            />
+            <button class="absolute right-4 top-64">
+              <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
+            </button>
+            <figcaption class="flex flex-col gap-2">
+              <span>이름</span>
+              <div>
+                <span class="sr-only">할인율</span>
+                <span class="mr-2 text-2xl font-semibold text-orange">25%</span>
+                <span class="sr-only">할인가</span>
+                <span class="text-2xl font-semibold">7500원</span>
+              </div>
+              <span class="sr-only">정가</span>
+              <span class="text-xs text-grey1 line-through">10000원</span>
+
+              <span class="text-xs text-grey1">가나다라마바사</span>
+              <div>
+                <span
+                  class="rounded bg-grey3 p-1 text-xs font-semibold text-black"
+                  >한정수량</span
+                >
+                <span
+                  class="rounded bg-grey3 p-1 text-xs font-semibold text-violet"
+                  >Karly Only</span
+                >
+              </div>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

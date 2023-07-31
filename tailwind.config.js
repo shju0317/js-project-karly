@@ -17,6 +17,7 @@
           grey2: "#C4C4C4",
           grey3: "#E1E1E1",
           grey4: "#D9D9D9",
+          grey5: "#6B6B6B",
           violet: "#5F0080",
           error: "#F03F40",
           orange: "#FA622F"
