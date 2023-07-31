@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="./css/main.css" />
     <!-- swiper CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./lib/dom/addCartModal.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
-    <title>Project Karly</title>
+    <title>칼리 - 마켓칼리/뷰티칼리</title>
   </head>
 
   <body>
@@ -101,30 +102,33 @@
                 ><img src="./assets/images/heart.svg" alt="찜한 상품"
               /></a>
             </li>
-            <li>
+            <li class="cart relative z-0">
               <a href="/"
-                ><img src="./assets/images/headerCart.svg" alt="장바구니"
-              /></a>
+                ><div
+                  class="cartTotal absolute left-5 z-10 flex items-center justify-center rounded bg-violet text-xs text-white"
+                  style="border-radius: 50%"
+                ></div>
+                <img src="./assets/images/headerCart.svg" alt="장바구니" />
+              </a>
             </li>
           </ul>
         </div>
       </div>
 
       <!-- Main nav -->
-      <nav class="flex items-center justify-between py-4 text-base text-black">
-        <div>
-          <div class="px-2 py-2 hover:text-violet">
-            <a href="">
-              <span class="flex gap-3 font-semibold">
-                <img
-                  class="aria-hidden"
-                  src="./assets/images/hamburger.svg"
-                  alt="카테고리"
-                />카테고리
-              </span>
-            </a>
-          </div>
-        </div>
+      <nav
+        class="relative mt-5 flex h-16 items-center justify-between pt-6 text-base text-black"
+      >
+        <a href="" class="nav__category h-6 px-2 pb-8 pt-1 hover:text-violet">
+          <span class="flex gap-3 font-semibold">
+            <img
+              class="aria-hidden"
+              src="./assets/images/hamburger.svg"
+              alt="카테고리"
+            />카테고리
+          </span>
+        </a>
+
         <!-- Main menu -->
         <ul
           class="ml-10 flex justify-between font-semibold"
@@ -154,6 +158,68 @@
           </a>
         </div>
       </nav>
+
+      <!-- 카테고리 드롭다운 목록 -->
+      <div
+        class="text-s categoryContainer static bottom-6 z-10 -mt-1 hidden hidden w-60 bg-white font-semibold text-black"
+      >
+        <ul>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pl-2 pt-2">
+              <img src="./assets/images/ca_01.svg" alt="선물하기" />
+              <span>선물하기</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pl-2 pt-2">
+              <img src="./assets/images/ca_02.svg" alt="채소" />
+              <span>채소</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_03.svg" alt="과일 견과 쌀" />
+              <span>과일 · 견과 · 쌀</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_04.svg" alt="수산 해산 건어물" />
+              <span>수산 · 해산 · 건어물</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_05.svg" alt="정육 계란" />
+              <span>정육 · 계란</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_06.svg" alt="국 반찬 메인요리" />
+              <span>국 · 반찬 · 메인요리</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_07.svg" alt="샐러드 간편식" />
+              <span>샐러드 · 간편식</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_08.svg" alt="면 양념 오일" />
+              <span>면 · 양념 · 오일</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_11.svg" alt="간식 과자 떡" />
+              <span>간식 · 과자 · 떡</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- swiper slider 메인 배너 -->
@@ -219,7 +285,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -239,7 +305,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -263,7 +329,8 @@
                   >
                 </div>
               </a>
-              <button class="absolute right-[15px] top-[258px]">
+              <!-- 장바구니 아이콘 -->
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -283,7 +350,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -311,7 +378,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -335,7 +402,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -354,7 +421,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -373,7 +440,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -400,7 +467,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -424,7 +491,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -443,7 +510,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -499,7 +566,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -518,7 +585,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -542,7 +609,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -561,7 +628,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -588,7 +655,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -612,7 +679,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -631,7 +698,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -650,7 +717,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -677,7 +744,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -701,7 +768,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -720,7 +787,7 @@
                 </div>
               </a>
               <!-- 장바구니 아이콘 -->
-              <button class="absolute right-[15px] top-[258px]">
+              <button class="addCart absolute right-[15px] top-[258px]">
                 <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
               </button>
             </div>
@@ -769,5 +836,48 @@
         class="swiper-button-next swiperNext4 left-1/2 top-[220px] h-[18px] w-[18px] -translate-x-1/2 bg-[url('../../assets/icons/direction_down.svg')] bg-center bg-no-repeat p-[4px] after:hidden"
       ></div>
     </div>
+
+    <!-- 장바구니 상품 모달창 -->
+    <!-- <div
+      class="daddCartModalContainer fixed left-0 top-0 z-50 h-full w-full overflow-auto"
+    >
+      <div
+        class="addCartModal absolute left-1/2 top-1/2 mx-auto flex h-[292px] w-[396px] -translate-x-1/2 -translate-y-1/2 flex-col gap-5 rounded-xl bg-red-300 px-5 py-6 font-semibold"
+      >
+        <span class="addCartModal__productName text-lg">쭈꾸미</span>
+        <div
+          class="addCartModal__count flex items-center justify-between bg-yellow-200"
+        >
+          <span class="modalProduct text-xl">원 </span>
+          <div
+            class="flex h-10 w-24 items-center justify-evenly border-2 border-gray-400 bg-white text-xl"
+          >
+            <button class="removeProduct h-full w-4/12 bg-blue-300">-</button>
+            <span class="productCount flex w-4/12 justify-center">1</span>
+            <button class="addProduct h-full w-4/12 bg-blue-300">+</button>
+          </div>
+        </div>
+        <div class="addCartModal__total flex items-baseline justify-between">
+          <span class="addCartModal__total__span">합계</span>
+          <span class="addCartModal__total__cost text-2xl">원</span>
+        </div>
+        <div class="flex w-full justify-end gap-3">
+          <div
+            class="flex h-5 w-10 justify-center rounded-lg bg-orange text-sm font-normal text-white"
+          >
+            적립
+          </div>
+          <span>로그인 후, 적립 혜택 제공</span>
+        </div>
+        <div class="addCartModal__button flex h-14 gap-2">
+          <button class="w-1/2 rounded-md border-2 bg-white text-xl">
+            취소
+          </button>
+          <button class="w-1/2 rounded-md bg-violet text-xl text-white">
+            장바구니 담기
+          </button>
+        </div>
+      </div>
+    </div> -->
   </body>
 </html>

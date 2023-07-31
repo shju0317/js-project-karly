@@ -1,4 +1,4 @@
-import { getProductData } from '../lib/index.js';
+import { getProductData, getNode, getNodes, removeClass, addClass, insertLast } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
@@ -37,6 +37,23 @@ new Swiper('.swiper1', {
     prevEl: ".swiperPrev1",
   },
 })
+
+/* 메인 카테고리 드롭 다운 */
+const navCategory = getNode('.nav__category')
+const categoryContainer = getNode('.categoryContainer')
+
+function handleDropdown() {
+  removeClass(categoryContainer,'hidden')
+}
+
+
+function handleMouseOut(){
+
+  addClass(categoryContainer,'hidden')
+}
+
+navCategory.addEventListener('mouseover',handleDropdown)
+categoryContainer.addEventListener('mouseout',handleMouseOut)
 
 
 // main 페이지 main 상단 슬라이더 코드
@@ -83,4 +100,27 @@ var swiper4 = new Swiper('.swiper4', {
 	},
 });
 
+
+/* 장바구니 추가 */
+const addCart = getNodes('.addCart')
+// console.log(addCart);
+// function handleAddCartModal(){
+
+// }
+
+// addCart.addEventListener('clikc',handleAddCartModal)
+
+
+console.log(addCart);
+const cartTotal = getNode('.cartTotal')
+let totalCart = 0;
+
+addCart.forEach(clickCart => {
+  clickCart.addEventListener('click', () =>{
+    ++totalCart;
+    addClass(cartTotal,'w-5')
+    addClass(cartTotal,'h-6')
+    cartTotal.textContent = `${totalCart}`
+  })
+})
 
