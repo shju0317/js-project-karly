@@ -552,6 +552,10 @@ html{
   border-width: 0;
 }
 
+.invisible{
+  visibility: hidden;
+}
+
 .static{
   position: static;
 }
@@ -665,6 +669,11 @@ html{
   margin-right: auto;
 }
 
+.my-10{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -758,6 +767,10 @@ html{
   margin-top: 3rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
 .mt-3{
   margin-top: 0.75rem;
 }
@@ -776,6 +789,10 @@ html{
 
 .mt-\[8px\]{
   margin-top: 8px;
+}
+
+.box-border{
+  box-sizing: border-box;
 }
 
 .block{
@@ -802,10 +819,6 @@ html{
   height: 2.5rem;
 }
 
-.h-11{
-  height: 2.75rem;
-}
-
 .h-12{
   height: 3rem;
 }
@@ -816,6 +829,10 @@ html{
 
 .h-16{
   height: 4rem;
+}
+
+.h-20{
+  height: 5rem;
 }
 
 .h-48{
@@ -1504,6 +1521,26 @@ html{
   opacity: 0;
 }
 
+.address-modal{
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.address-modal-none{
+  display: none;
+  height: 0px;
+}
+
+.placeholder\:text-center::-moz-placeholder{
+  text-align: center;
+}
+
+.placeholder\:text-center::placeholder{
+  text-align: center;
+}
+
 .after\:hidden::after{
   content: var(--tw-content);
   display: none;
@@ -1543,14 +1580,7 @@ html{
     max-width: 640px;
   }
 
-  .md\:items-center{
-    align-items: center;
-  }
-
   .md\:justify-center{
     justify-content: center;
   }
 }
-
-
-
