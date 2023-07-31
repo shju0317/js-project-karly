@@ -1,3 +1,5 @@
+import { tiger } from "../utils/tiger.js";
+import { getNode } from "./getNode.js";
 import { insertFirst } from "./insert.js";
 
 
@@ -7,7 +9,7 @@ export function createProduct(item){
 		const template = /*html*/ `
 		<div class="swiper-slide w-[250px]">
 			<a href="#">
-				<img src="./assets/${item.image.thumbnail}" alt="${item.alt}" />
+				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>
 					<span class="my-[8px] mt-[8px] text-[22px] font-[600]"
@@ -28,7 +30,7 @@ export function createProduct(item){
 		const template = /*html*/ `
 		<div class="swiper-slide w-[250px]">
 			<a href="#">
-				<img src="./assets/${item.image.thumbnail}" alt="${item.alt}" />
+				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>
 					<span
@@ -58,3 +60,17 @@ export function createProduct(item){
 export function renderProduct(target, data){
 	insertFirst(target, createProduct(data))
 }
+
+
+const swiperWrapper2 = getNode('.swiperWrapper2')
+
+export async function renderItemList(){
+  const response = await tiger.get('http://localhost:3000/products')    // promise 객체
+  const itemList = response.data;
+
+	itemList.forEach((item)=>{
+		renderProduct(swiperWrapper2, item)
+		
+  })
+}
+
