@@ -1,6 +1,4 @@
-import { bindEvent } from "./bindEvent.js";
-import { getNode } from "./getNode.js";
-import { insertFirst } from "./insert.js";
+import { getNode, bindEvent } from '../../lib/index.js';
 
 
 /* 상품 수량 불러오기 및 렌더링 */
@@ -63,13 +61,13 @@ function createProduct(item){
 /* 선택한 상품 이름 불러오기 */
 const productList = getNode('.productList');
 
-let productID = bindEvent(productList,'click',(item)=>{
-  const figure = item.target.closest('figure');
-  return figure.querySelector('figcaption > span').textContent;
-  // figure.childNodes[1].alt;
-  console.log(productID);
-  }
-  )
+// let productID = bindEvent(productList,'click',(item)=>{
+//   const figure = item.target.closest('figure');
+//   return figure.querySelector('figcaption > span').textContent;
+//   // figure.childNodes[1].alt;
+//   console.log(productID);
+//   }
+//   )
 
 //   console.log(productID);
 
