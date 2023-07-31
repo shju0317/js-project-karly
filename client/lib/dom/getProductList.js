@@ -18,7 +18,7 @@ export function createProduct(item){
 				</div>
 			</a>
 			<!-- 장바구니 아이콘 -->
-			<button class="absolute right-[15px] top-[258px]">
+			<button class="addCart absolute right-[15px] top-[258px]">
 				<img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
 			</button>
 		</div>
@@ -47,7 +47,7 @@ export function createProduct(item){
 				</div>
 			</a>
 			<!-- 장바구니 아이콘 -->
-			<button class="absolute right-[15px] top-[258px]">
+			<button class="addCart absolute right-[15px] top-[258px]">
 				<img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
 			</button>
 		</div>
@@ -63,6 +63,7 @@ export function renderProduct(target, data){
 
 
 const swiperWrapper2 = getNode('.swiperWrapper2')
+const swiperWrapper3 = getNode('.swiperWrapper3')
 
 export async function renderItemList(){
   const response = await tiger.get('http://localhost:3000/products')    // promise 객체
@@ -70,7 +71,7 @@ export async function renderItemList(){
 
 	itemList.forEach((item)=>{
 		renderProduct(swiperWrapper2, item)
-		
+		renderProduct(swiperWrapper3, item)
   })
 }
 
