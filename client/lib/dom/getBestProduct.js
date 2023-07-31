@@ -14,7 +14,7 @@ function createProduct(item){
           alt="${item.image.alt}"
           class="mb-4 drop-shadow-md"
         />
-        <button class="absolute right-4">
+        <button class="absolute right-4 top-64">
             <img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
         </button>
         <figcaption class="flex flex-col gap-2">
