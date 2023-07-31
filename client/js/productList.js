@@ -42,13 +42,15 @@ const productDetail = getNode('.productDetail');
 
 // console.log('여기: '+productID);
 
-let productID = bindEvent(productList,'click',(item)=>{
-    const figure = item.target.closest('figure');
-    productID = figure.querySelector('figcaption > span').textContent;
-    console.log('1: '+productID);
-    return productID;  
-  })
-  // console.log('2: '+productID);
-  // return productID;
 
-console.log('여기: '+productID);
+
+// let productID = bindEvent(productList,'click',(item)=>{
+//     const figure = item.target.closest('figure');
+//     productID = figure.querySelector('figcaption > span').textContent;
+//     console.log('1: '+productID);
+//     return productID;  
+//   })
+//   // console.log('2: '+productID);
+//   // return productID;
+
+// console.log('여기: '+productID);

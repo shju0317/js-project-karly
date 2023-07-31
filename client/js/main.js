@@ -1,4 +1,4 @@
-import { getProductData, getNode, getNodes, removeClass, addClass, insertLast } from '../lib/index.js';
+import { getNode, getNodes, removeClass, addClass, insertLast } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
