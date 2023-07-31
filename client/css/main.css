@@ -616,6 +616,10 @@ html{
   z-index: 30;
 }
 
+.z-50{
+  z-index: 50;
+}
+
 .float-right{
   float: right;
 }
@@ -717,6 +721,10 @@ html{
   margin-top: 16px;
 }
 
+.mt-\[200px\]{
+  margin-top: 200px;
+}
+
 .mt-\[40px\]{
   margin-top: 40px;
 }
@@ -769,8 +777,20 @@ html{
   height: 223px;
 }
 
+.h-\[586px\]{
+  height: 586px;
+}
+
 .h-\[60px\]{
   height: 60px;
+}
+
+.h-\[672px\]{
+  height: 672px;
+}
+
+.h-\[86px\]{
+  height: 86px;
 }
 
 .h-full{
@@ -821,12 +841,20 @@ html{
   width: 18px;
 }
 
+.w-\[220px\]{
+  width: 220px;
+}
+
 .w-\[250px\]{
   width: 250px;
 }
 
 .w-\[40px\]{
   width: 40px;
+}
+
+.w-\[440px\]{
+  width: 440px;
 }
 
 .w-\[60px\]{
@@ -928,12 +956,20 @@ html{
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-hidden{
+  overflow: hidden;
+}
+
 .rounded{
   border-radius: 0.25rem;
 }
 
 .rounded-2xl{
   border-radius: 1rem;
+}
+
+.rounded-\[16px\]{
+  border-radius: 16px;
 }
 
 .rounded-lg{
@@ -993,6 +1029,11 @@ html{
 .bg-violet{
   --tw-bg-opacity: 1;
   background-color: rgb(95 0 128 / var(--tw-bg-opacity));
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\.\/\.\.\/assets\/icons\/arrow_next\.svg\'\)\]{

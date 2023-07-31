@@ -76,10 +76,10 @@ const swiperWrapper3 = getNode('.swiperWrapper3')
 const asideBox = getNode('.asideBox')
 
 export async function clickHandler(e){
-  if(e.target.tagName === 'IMG'){
+  if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
 		e.preventDefault(e)
 
-    const slideElement = e.target.closest('.swiper-slide')
+    const slideElement = e.target.closest('.swiper-slide') || e.target;
     const srcValue = slideElement.querySelector('img').getAttribute('src');
 
 		const sameImage = swiper4.slides.findIndex((slide) => {
