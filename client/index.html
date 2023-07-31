@@ -266,7 +266,7 @@
         <div class="swiper swiper2 w-auto">
           <div class="swiper-wrapper">
             <!-- 슬라이드 1 :: 유부 -->
-            <div class="swiper-slide w-[250px]">
+            <div data-index="1" class="swiper-slide w-[250px]">
               <a href="#">
                 <img src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
                 <div class="mt-[16px]">
@@ -838,8 +838,8 @@
     </div>
 
     <!-- 장바구니 상품 모달창 -->
-    <!-- <div
-      class="daddCartModalContainer fixed left-0 top-0 z-50 h-full w-full overflow-auto"
+    <div
+      class="addCartModalContainer fixed left-0 top-0 z-50 hidden h-full w-full overflow-auto bg-black bg-opacity-30"
     >
       <div
         class="addCartModal absolute left-1/2 top-1/2 mx-auto flex h-[292px] w-[396px] -translate-x-1/2 -translate-y-1/2 flex-col gap-5 rounded-xl bg-red-300 px-5 py-6 font-semibold"
@@ -870,14 +870,18 @@
           <span>로그인 후, 적립 혜택 제공</span>
         </div>
         <div class="addCartModal__button flex h-14 gap-2">
-          <button class="w-1/2 rounded-md border-2 bg-white text-xl">
+          <button
+            class="addCartModal__button__modalClose w-1/2 rounded-md border-2 bg-white text-xl"
+          >
             취소
           </button>
-          <button class="w-1/2 rounded-md bg-violet text-xl text-white">
+          <button
+            class="addCartModal__button__modalAdd w-1/2 rounded-md bg-violet text-xl text-white"
+          >
             장바구니 담기
           </button>
         </div>
       </div>
-    </div> -->
+    </div>
   </body>
 </html>

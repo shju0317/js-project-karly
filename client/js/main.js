@@ -101,26 +101,45 @@ var swiper4 = new Swiper('.swiper4', {
 });
 
 
-/* 장바구니 추가 */
-const addCart = getNodes('.addCart')
-// console.log(addCart);
-// function handleAddCartModal(){
+/*-------------장바구니 추가 ------------------------------------------*/
+const cartTotal = getNode('.cartTotal');
+const addCart = getNodes('.addCart');
 
-// }
-
-// addCart.addEventListener('clikc',handleAddCartModal)
-
-
-console.log(addCart);
-const cartTotal = getNode('.cartTotal')
 let totalCart = 0;
 
-addCart.forEach(clickCart => {
-  clickCart.addEventListener('click', () =>{
-    ++totalCart;
-    addClass(cartTotal,'w-5')
-    addClass(cartTotal,'h-6')
-    cartTotal.textContent = `${totalCart}`
-  })
-})
+/* 모달 열릴때마다 초기화 확인 */
+let isModalInitialized = false;
+
+function handleAddCartModal(e) {
+  const addCartModal = getNode('.addCartModalContainer');
+  const modalClose = getNode('.addCartModal__button__modalClose');
+  const modalAdd = getNode('.addCartModal__button__modalAdd');
+  const productName = e.target.dataset.product;
+
+  if (!isModalInitialized) {
+    modalClose.addEventListener('click', () => {
+      addClass(addCartModal, 'hidden');
+    });
+
+    modalAdd.addEventListener('click', () => {
+      console.log("totalCart");
+      ++totalCart;
+      addClass(cartTotal, 'h-6');
+      addClass(cartTotal, 'w-5');
+      cartTotal.textContent = `${totalCart}`;
+      addClass(addCartModal, 'hidden');
+    });
+
+    isModalInitialized = true;
+  }
+
+  removeClass(addCartModal, 'hidden');
+
+
+  
+}
+
+addCart.forEach(cart => {
+  cart.addEventListener('click', handleAddCartModal);
+});
 
