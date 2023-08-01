@@ -1,6 +1,6 @@
 /* @import 'tailwindcss/base'; */
 
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
 
 @tailwind base;
 @tailwind components;
@@ -12,13 +12,11 @@
   }
 }
 
-
 /* swiper 왼쪽 버튼 비활성화 적용 코드 */
 .swiperPrev2.swiper-button-disabled,
 .swiperPrev3.swiper-button-disabled {
   @apply opacity-0;
 }
-
 
 /* swiper 오른쪽 버튼 비활성화 적용 코드 */
 .swiperNext2.swiper-button-disabled,
@@ -27,14 +25,14 @@
 }
 
 .swiperNext4.swiper-button-disabled,
-.swiperPrev4.swiper-button-disabled{
-  @apply block
+.swiperPrev4.swiper-button-disabled {
+  @apply block;
 }
 
-.address-modal{
-  @apply flex flex-col gap-3 mt-2
+.address__modal {
+  @apply mt-2 flex flex-col gap-3;
 }
 
-.address-modal-none{
-  @apply h-0 hidden
+.address__modal__none {
+  @apply hidden h-0;
 }
