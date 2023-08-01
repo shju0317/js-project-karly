@@ -1,4 +1,4 @@
-import {  addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
+import { attr, deleteStorage, addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
