@@ -1057,6 +1057,10 @@ html{
   flex-wrap: wrap;
 }
 
+.content-center{
+  align-content: center;
+}
+
 .items-start{
   align-items: flex-start;
 }
@@ -1087,6 +1091,10 @@ html{
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
 }
 
 .justify-evenly{
@@ -1467,8 +1475,20 @@ html{
   font-weight: 600;
 }
 
+.font-extrabold{
+  font-weight: 800;
+}
+
 .leading-\[48px\]{
   line-height: 48px;
+}
+
+.leading-10{
+  line-height: 2.5rem;
+}
+
+.leading-\[56px\]{
+  line-height: 56px;
 }
 
 .text-\[600\]{
