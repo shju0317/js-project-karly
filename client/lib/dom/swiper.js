@@ -74,7 +74,7 @@ const swiperWrapper2 = getNode('.swiperWrapper2')
 const swiperWrapper3 = getNode('.swiperWrapper3')
 const asideBox = getNode('.asideBox')
 
-export async function clickHandler(e){
+async function clickHandler(e){
 
 
   if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){

@@ -57,7 +57,7 @@ export function createProduct(item){
 }
 
 
-export function renderProduct(target, data){
+export function renderMainProduct(target, data){
 	insertFirst(target, createProduct(data))
 }
 
@@ -70,8 +70,8 @@ export async function renderItemList(){
   const itemList = response.data;
 
 	itemList.forEach((item)=>{
-		renderProduct(swiperWrapper2, item)
-		renderProduct(swiperWrapper3, item)
+		renderMainProduct(swiperWrapper2, item)
+		renderMainProduct(swiperWrapper3, item)
   })
 }
 

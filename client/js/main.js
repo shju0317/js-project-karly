@@ -1,4 +1,6 @@
-import {  addClass, attr, removeClass, getNode, renderItemList, } from '../lib/index.js';
+import { attr, deleteStorage, addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
+import  { } from '../lib/dom/swiper.js';
+import {  } from '../lib/dom/header.js';
 
 
 renderItemList();
