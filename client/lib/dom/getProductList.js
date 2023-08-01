@@ -12,6 +12,7 @@ export function createProduct(item){
 				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>
+					<span class="productID hidden">${item.id}</span>
 					<span class="my-[8px] mt-[8px] text-[22px] font-[600]"
 						>${item.price.toLocaleString()} 원</span
 					>
@@ -33,6 +34,7 @@ export function createProduct(item){
 				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>
+					<span class="productID hidden">${item.id}</span>
 					<span
 						class="my-[8px] mr-[8px] text-[22px] font-[600] text-orange"
 						>${Number(item.saleRatio) * 100}%</span
