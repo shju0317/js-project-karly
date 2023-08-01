@@ -21,8 +21,7 @@ bindEvent(productList,'click',(item)=>{
   console.log('안: '+figure.querySelector('figcaption > span').textContent);
   state.id = figure.querySelector('figcaption > span').textContent;
   console.log('state.id: ' + state.id);
+  localStorage.setItem('productID', state.id);
   return state.id;
   }
   )
-
-  console.log('밖:'+state.id);

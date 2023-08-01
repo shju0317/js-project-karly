@@ -10,4 +10,7 @@ const productDetail = getNode('.productDetail');
 /* 선택한 상품 id 불러오기 */
 selectedProduct(productDetail);
 
-console.log('state.id: '+state.id);
+// console.log('state.id: '+state.id);
+
+localStorage.getItem('productID')
+console.log(localStorage.getItem('productID'));
