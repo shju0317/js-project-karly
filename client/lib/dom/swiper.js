@@ -1,5 +1,6 @@
 import { loadStorage, saveStorage } from "../utils/storage.js";
 import { getNode, getNodes } from "./getNode.js";
+import { renderProductDetail } from "./index.js";
 
 
 
@@ -103,13 +104,28 @@ if(recentList.length > 0){
   swiper4.slideTo(newSlideIndex, 0, false)
 }
 
+
+// let productID = "";
+
+
 async function clickHandler(e){
+	// e.preventDefault();
+
+
 	// 클릭한게 슬라이드 영역이면
   if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
 
     const slideElement = e.target.closest('.swiper-slide') || e.target;
     const srcValue = slideElement.querySelector('img').getAttribute('src');
-    
+    let productID = slideElement.querySelector('.productID').textContent;
+		console.log(productID);
+		// localStorage.setItem('productID', productID);
+
+		saveStorage('src', srcValue)
+		saveStorage('productID', productID);
+
+		// renderProductDetail(productDetail, productID);
+
 		const recentList = JSON.parse(localStorage.getItem('recentList')) || [];
     const sameImageIndex = recentList.findIndex((src) => {
       return src === srcValue;
@@ -119,6 +135,8 @@ async function clickHandler(e){
       // 이미 있는 이미지면 삭제
       recentList.splice(sameImageIndex, 1);
     } 
+
+
 
     // 배열에 추가
     recentList.push(srcValue);
