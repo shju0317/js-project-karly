@@ -1,4 +1,4 @@
-import { getNode, getNodes, removeClass, addClass, insertLast } from '../lib/index.js';
+import { getNode, getNodes, removeClass, addClass, insertLast, refError } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
@@ -114,7 +114,19 @@ function handleAddCartModal(e) {
   const addCartModal = getNode('.addCartModalContainer');
   const modalClose = getNode('.addCartModal__button__modalClose');
   const modalAdd = getNode('.addCartModal__button__modalAdd');
-  const productName = e.target.dataset.product;
+  const target = e.target
+  const par = target.closest('div')
+  const index = par.getAttribute('data-index');
+  
+
+  console.log(index);
+  // 상품에 맞는 정보 불러오기
+
+  
+
+
+
+
 
   if (!isModalInitialized) {
     modalClose.addEventListener('click', () => {
@@ -132,7 +144,7 @@ function handleAddCartModal(e) {
 
     isModalInitialized = true;
   }
-
+  logJSONData() 
   removeClass(addCartModal, 'hidden');
 
 
@@ -142,4 +154,36 @@ function handleAddCartModal(e) {
 addCart.forEach(cart => {
   cart.addEventListener('click', handleAddCartModal);
 });
+
+
+
+
+
+// // data.json 불러오기
+// const index = 
+
+function loadData(index){
+
+  fetch('/server/db/data.json')
+    .then(response => response.json())
+    .then(data => {
+      const clickedItem = data.find(item => item.id === index)
+      console.log(clickedItem);
+    })
+    .catch(refError)
+}
+
+
+
+
+// handleProductInfo()
+
+
+
+
+async function logJSONData() {
+  const response = await fetch("/server/db/data.json");
+  const jsonData = await response.json();
+  console.log(jsonData);
+}
 
