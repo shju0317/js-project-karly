@@ -73,18 +73,9 @@ const productList = getNode('.productList');
 
 export function selectedProduct(target){
 
-  console.log(productID);
+  console.log(target);
 }
 
-/* 선택한 상품 이름 불러오기 */
-// let productID = bindEvent('.productDetail','click',(item)=>{
-//   const figure = item.target.closest('figure');
-//   productID = figure.querySelector('figcaption > span').textContent;
-//   return productID;
-//   // figure.childNodes[1].alt;
-// })
-  
-// console.log(productID);
 
 /* 상품 상세정보 생성 */
 function createProductDetail(id){
@@ -165,10 +156,6 @@ function createProductDetail(id){
 
   return template;
 }
-
-
-
-
 
 
 
