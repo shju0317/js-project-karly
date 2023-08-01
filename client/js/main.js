@@ -1,47 +1,7 @@
 import {  addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
 
-// console.log(getProductData(10));
-
-/* 메인 상단 팝업 닫기 */
-const headerXbutton = document.querySelector('.headerPopup__xButton');
-
-function handleRemovePopup(){
-  const headerPopup = document.querySelector('.headerPopup')
-  
-  headerPopup.style.transition = 'all 0.5s ease';
-  headerPopup.style.opacity = 0.5;
-  headerPopup.style.transform = 'translateY(-100%)';
-  setTimeout(() => {
-    headerPopup.remove();
-  }, 200);
-}
-headerXbutton.addEventListener('click',handleRemovePopup)
-
-
-
-/* 메인 카테고리 드롭 다운 */
-const navCategory = getNode('.nav__category')
-const categoryContainer = getNode('.categoryContainer')
-
-function handleDropdown() {
-  removeClass(categoryContainer,'hidden')
-}
-
-
-function handleMouseOut(){
-
-  addClass(categoryContainer,'hidden')
-}
-
-navCategory.addEventListener('mouseover',handleDropdown)
-categoryContainer.addEventListener('mouseout',handleMouseOut)
-
-
 
 renderItemList();
-
-
-
 
 
 /*-------------장바구니 추가 ------------------------------------------*/
@@ -70,7 +30,6 @@ function handleAddCartModal(e) {
       });
   
       modalAdd.addEventListener('click', () => {
-        console.log("totalCart");
         ++totalCart;
         addClass(cartTotal, 'h-6');
         addClass(cartTotal, 'w-5');
@@ -80,7 +39,6 @@ function handleAddCartModal(e) {
   
       isModalInitialized = true;
     }
-    logJSONData() 
     removeClass(addCartModal, 'hidden');
   }
   
@@ -117,15 +75,4 @@ function loadData(index){
 
 
 
-
 // handleProductInfo()
-
-
-
-
-async function logJSONData() {
-  const response = await fetch("/server/db/data.json");
-  const jsonData = await response.json();
-  console.log(jsonData);
-}
-

@@ -14,4 +14,4 @@ export * from './controlElement.js';
 // export * from './productList.js';
 export * from './getProductList.js';
 export * from './getBestProduct.js';
-export * from './addCartModal.js';
+export * from './header.js';
