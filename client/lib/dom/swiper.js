@@ -1,5 +1,5 @@
-import { saveStorage } from "../utils/storage.js";
-import { getNode } from "./getNode.js";
+import { loadStorage, saveStorage } from "../utils/storage.js";
+import { getNode, getNodes } from "./getNode.js";
 
 
 
@@ -23,6 +23,9 @@ export const swiper1 = new Swiper('.swiper1', {
 })
 
 
+
+
+
 // main 페이지 main 상단 슬라이더 코드
 export const swiper2 = new Swiper('.swiper2', {
 	spaceBetween: 15,
@@ -39,6 +42,7 @@ export const swiper2 = new Swiper('.swiper2', {
 	},
 });
 
+
 // main 페이지 main 하단 슬라이더 코드
 export const swiper3 = new Swiper('.swiper3', {
 	spaceBetween: 15,
@@ -54,6 +58,8 @@ export const swiper3 = new Swiper('.swiper3', {
 		prevEl: '.swiperPrev3',
 	},
 });
+
+
 
 // main 페이지 우측 aside 슬라이더 코드 (아직 작동안됨)
 export const swiper4 = new Swiper('.swiper4', {
@@ -74,45 +80,74 @@ const swiperWrapper2 = getNode('.swiperWrapper2')
 const swiperWrapper3 = getNode('.swiperWrapper3')
 const asideBox = getNode('.asideBox')
 
-async function clickHandler(e){
+// 로컬 스토리지에서 최근 본 항목 값 배열로 가져오기
+const recentList = JSON.parse(localStorage.getItem('recentList')) || [];
 
-
-  if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
-		// e.preventDefault(e)
-
-		
-    const slideElement = e.target.closest('.swiper-slide') || e.target;
-    const srcValue = slideElement.querySelector('img').getAttribute('src');
-
-		const sameImage = swiper4.slides.findIndex((slide) => {
-
-			// 슬라이드 안의 이미지에 접근
-      const img = slide.querySelector('img');
-			// 클릭한 이미지랑 기존에 존재하는 이미지랑 같은지 확인
-      return img.getAttribute('src') === srcValue;
-    });
-
-		// 같은 이미지가 있으면(-1이 아니면) 슬라이드 제거하기
-    if (sameImage !== -1) {
-      swiper4.removeSlide(sameImage);
-    }
-
-
-    saveStorage('src', srcValue)
-    
-    swiper4.prependSlide(`
+// 최근 본 이미지가 있으면 슬라이드에 이미지들 추가하기(빈 배열이 아니라면)
+if(recentList.length > 0){
+  recentList.forEach(srcValue => {
+    const slideElement = `
       <div class="swiper-slide">
-      <a href="#">
-        <img class="asideSlide" src="${srcValue}" alt=""
-      /></a>
-      </div>`
-  )
+        <a href="#">
+          <img class="asideSlide" src="${srcValue}" alt="">
+        </a>
+      </div>
+    `;
+
+    swiper4.prependSlide(slideElement);   // 스와이퍼 슬라이드 제일 앞에 넣기
+
+  });
+
+  // 가장 최근 본 항목이 슬라이드 제일 앞에 오게 하기
   const newSlideIndex = 0;
   swiper4.slideTo(newSlideIndex, 0, false)
+}
+
+async function clickHandler(e){
+	// 클릭한게 슬라이드 영역이면
+  if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
+
+    const slideElement = e.target.closest('.swiper-slide') || e.target;
+    const srcValue = slideElement.querySelector('img').getAttribute('src');
+    
+		const recentList = JSON.parse(localStorage.getItem('recentList')) || [];
+    const sameImageIndex = recentList.findIndex((src) => {
+      return src === srcValue;
+    });
+
+    if (sameImageIndex !== -1) {
+      // 이미 있는 이미지면 삭제
+      recentList.splice(sameImageIndex, 1);
+    } 
+
+    // 배열에 추가
+    recentList.push(srcValue);
+
+    // 로컬스토리지에 배열로 저장
+    localStorage.setItem('recentList', JSON.stringify(recentList));
+
+    swiper4.removeAllSlides();
+
+    // 슬라이드에 최근 본 목록 이미지 추가
+    recentList.forEach(srcValue => {
+
+      const slideElement = `
+        <div class="swiper-slide">
+          <a href="${srcValue}">
+            <img class="asideSlide" src="${srcValue}" alt="">
+          </a>
+        </div>
+      `;
+
+      swiper4.prependSlide(slideElement);
+
+    });
+
+    // 현재 슬라이드 인덱스 설정
+		const newSlideIndex = 0;
+		swiper4.slideTo(newSlideIndex, 0, false)
   }
 }
 
 swiperWrapper2.addEventListener('click', clickHandler)
 swiperWrapper3.addEventListener('click', clickHandler)
-
-
