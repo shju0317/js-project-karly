@@ -23,9 +23,10 @@ function handleAddCartModal(e) {
 
   // 클릭한 대상의 data-index값 불러오기
   
-  const cartIndex = e.target.closest('img')
-  const index = attr(cartIndex,'alt');
+  const cartIndex = e.target.closest('button')
+  const index = attr(cartIndex,'data-index');
   console.log(index);
+
 
 
 
