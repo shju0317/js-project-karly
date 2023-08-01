@@ -15,3 +15,4 @@ export * from "./controlElement.js";
 export * from "./getBestProduct.js";
 // export * from './productList.js';
 export * from "./addCartModal.js";
+export * from "./getProductList.js";
