@@ -42,6 +42,7 @@ function handleAddCartModal(e) {
         addClass(cartTotal, 'h-6');
         addClass(cartTotal, 'w-5');
         cartTotal.textContent = `${totalCart}`;
+        // localStorage.setItem('cart',`${totalCart}`)
         addClass(addCartModal, 'hidden');
       });
   
@@ -118,3 +119,6 @@ resetCount.addEventListener('click', handleModalCartCountReset);
 function numberComma(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+
+
