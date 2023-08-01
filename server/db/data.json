@@ -160,5 +160,37 @@
       },
       "stock": 13
     }
+  ],
+  "user": [
+    {
+      "id": "apple12",
+      "password": "abcd1234!",
+      "email": "apple@techit.euid",
+      "phone": "01012341234",
+      "address": {
+        "zipcode": "04624",
+        "address": "서울 중구 서애로 2",
+        "detail": "1층",
+        "extra": "(충무로 5가)"
+      },
+      "gender": null,
+      "birthDay": null,
+      "moreDetails": null
+    },
+    {
+      "id": "banana123",
+      "password": "abcd1234!",
+      "email": "banana123@techit.euid",
+      "phone": "01011111111",
+      "address": {
+        "zipcode": "06593",
+        "address": "서울 서초구 고무래로 4",
+        "detail": "2층",
+        "extra": " (반포동)"
+      },
+      "gender": null,
+      "birthDay": null,
+      "moreDetails": null
+    }
   ]
 }
