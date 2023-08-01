@@ -14,14 +14,14 @@ renderProductQuantity(itemList);
 
 
 
-/* 클릭한 상품 ID 불러오기 */
+/* 선택한 상품 id 불러오기 */
 bindEvent(productList,'click',(item)=>{
   const figure = item.target.closest('figure');
   
   console.log('안: '+figure.querySelector('figcaption > span').textContent);
   state.id = figure.querySelector('figcaption > span').textContent;
-  console.log('state.id: ' + state.id);
+  // console.log('state.id: ' + state.id);
   localStorage.setItem('productID', state.id);
   return state.id;
   }
-  )
+)

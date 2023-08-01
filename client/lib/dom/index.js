@@ -11,8 +11,4 @@ export * from './clearContents.js';
 export * from './controlElement.js';
 export * from './getProductList.js'
 export * from './getBestProduct.js';
-<<<<<<< HEAD
-export * from './addCartModal.js';
-=======
 // export * from './header.js';
->>>>>>> develop

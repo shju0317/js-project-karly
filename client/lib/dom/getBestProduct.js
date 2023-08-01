@@ -1,4 +1,4 @@
-import { getNode, bindEvent, insertFirst } from '../../lib/index.js';
+import { getNode, bindEvent, insertFirst, tiger } from '../../lib/index.js';
 
 
 /* 상품 수량 불러오기 및 렌더링 */
@@ -15,7 +15,7 @@ export function renderProductQuantity(itemList) {
 function createProduct(item){
 		const template = /*html*/ `
     <li class="w-[250px]">
-    <a href="#">
+    <a href="http://localhost:5500/productDetail.html">
       <figure class="relative">
         <img
           src="./assets/${item.image.thumbnail}"
@@ -57,109 +57,7 @@ function createProduct(item){
 		return template;
 	}
 
-
-/* 선택한 상품 이름 불러오기 */
-const productList = getNode('.productList');
-
-// let productID = bindEvent(productList,'click',(item)=>{
-//   const figure = item.target.closest('figure');
-//   return figure.querySelector('figcaption > span').textContent;
-//   // figure.childNodes[1].alt;
-//   console.log(productID);
-//   }
-//   )
-
-//   console.log(productID);
-
-export function selectedProduct(target){
-
-  console.log(target);
-}
-
-
-/* 상품 상세정보 생성 */
-function createProductDetail(id){
-
-  const template = /*html*/ `
-  <section >
-    <img src="./assets/bacon/thumbnail.jpg" alt="베이컨" class="w-[900px]"/>
-  </section>
-  <section class="flex flex-col">
-      <div class="flex flex-col gap-4 mb-5">
-        <span class="text-xl font-bold">샛별배송</span>
-        <span class="text-[28px] text-black font-semibold">[풀무원] 탱탱쫄면 (4개입)</span>
-        <span class="text-grey1">튀기지 않아 부담 없는 매콤함</span>
-        <span class="text-3xl text-black font-semibold">4,980<span class="text-base ml-1">원</span></span>
-        <span class="text-violet font-semibold">로그인 후, 적립 혜택이 제공됩니다.</span>
-      </div> 
-      <table class="text-left text-xs">
-        <tr class="border-t-1px border-b-1px">
-          <th class="font-semibold w-36">배송</th>
-          <td class="py-4">샛별배송</br>23시 전 주문 시 내일 아침 7시 전 도착</br>(대구 부산 울산 샛별배송 운영시간 별도 확인)</td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">판매자</th>
-          <td class="py-4">칼리</td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">포장타입</th>
-          <td class="py-4">상온 (종이포장)</td>
-        </tr>   
-        <tr class="border-b-1px">
-          <th class="font-semibold">판매단위</th>
-          <td class="py-4">1봉</td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">중량/용량</th>
-          <td class="py-4">123g*4봉</td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">원산지</th>
-          <td class="py-4">상세페이지 별도표기</td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">알레르기정보</th>
-          <td class="py-4">
-            <ul class="list-['-']">
-              <li class="">대두, 밀, 쇠고기 함유</li>
-              <li>계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아, 토마토를 사용한 제품과 같은 제조시설에서 제조</li>
-            </ul>
-          </td>
-        </tr>
-        <tr class="border-b-1px">
-          <th class="font-semibold">상품선택</th>
-          <td class="flex justify-between items-end px-4 py-4 border my-4">
-            <div>
-              <span>[풀무원] 탱탱쫄면 (4개입)</span>
-              <div class="flex justify-center w-[84px] align-middle mt-3 border">
-                <button><img src="./assets/icons/minus.svg" alt="감소" /></button>
-                <span class="px-2 py-1 text-black font-semibold text-base">1</span>
-                <button><img src="./assets/icons/plus.svg" alt="증가" /></button>
-              </div>
-            </div>
-            <span class="text-black font-semibold">4,980원</span>
-          </td>
-        </tr> 
-      </table>
-  <section class="text-right py-7 font-semibold text-black">
-    <div>총 상품금액:<span class="ml-4 text-3xl mr-1">4,980</span>원</div>
-    <div><span class="bg-orange text-xs text-white px-2 py-1 rounded-xl font-normal">적립</span>
-      로그인 후, 적립 혜택 제공</div>
-  </section>
-    <section class="flex gap-3">
-      <button><img src="./assets/icons/like.svg" alt="찜하기" /></button>
-      <button><img src="./assets/icons/bell.svg" alt="알림" /></button>
-      <button class="bg-violet text-white rounded-sm w-[560px]">장바구니 담기</button>
-    </section>
-  </section>
-  `
-
-  return template;
-}
-
-
-
-/* 상품정보 렌더링 */
+  /* 상품정보 렌더링 */
 export function renderProduct(target, data){
   // console.log(target.className.includes('productList'));
 
@@ -171,6 +69,124 @@ export function renderProduct(target, data){
   //   insertFirst(target, createProductDetail(data))
   // }
 
+}
+
+
+//============================================================================
+
+
+/* 선택한 상품 이름 불러오기 */
+const productList = getNode('.productList');
+const response = await tiger.get('http://localhost:3000/products');
+const itemList = response.data;
+
+
+/* 선택한 상품 id 불러오기 */
+// export function selectedProduct(){
+
+//   bindEvent(productList,'click',(item)=>{
+//     const figure = item.target.closest('figure');
+    
+//     console.log('안: '+figure.querySelector('figcaption > span').textContent);
+//     state.id = figure.querySelector('figcaption > span').textContent;
+//     console.log('state.id: ' + state.id);
+//     localStorage.setItem('productID', state.id);
+//     return state.id;
+//     }
+//   )
+// }
+
+
+/* 상품 상세정보 생성 */
+export function createProductDetail(id){
+  let template = '';
+
+  itemList.forEach((item) => {
+    if(item.id === id){
+      console.log('id 불러왔다!!');
+      template = /*html*/ `
+      <section>
+        <img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" class="w-[900px]"/>
+      </section>
+      <section class="flex flex-col">
+          <div class="flex flex-col gap-4 mb-5">
+            <span class="text-xl font-bold">샛별배송</span>
+            <span class="text-[28px] text-black font-semibold">${item.name}</span>
+            <span class="text-grey1">${item.description}</span>
+            <span class="text-3xl text-black font-semibold">${item.price.toLocaleString()}<span class="text-base ml-1">원</span></span>
+            <span class="text-violet font-semibold">로그인 후, 적립 혜택이 제공됩니다.</span>
+          </div> 
+          <table class="text-left text-xs">
+            <tr class="border-t-1px border-b-1px">
+              <th class="font-semibold w-36">배송</th>
+              <td class="py-4">샛별배송</br>23시 전 주문 시 내일 아침 7시 전 도착</br>(대구 부산 울산 샛별배송 운영시간 별도 확인)</td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">판매자</th>
+              <td class="py-4">칼리</td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">포장타입</th>
+              <td class="py-4">상온 (종이포장)</td>
+            </tr>   
+            <tr class="border-b-1px">
+              <th class="font-semibold">판매단위</th>
+              <td class="py-4">1봉</td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">중량/용량</th>
+              <td class="py-4">123g*4봉</td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">원산지</th>
+              <td class="py-4">상세페이지 별도표기</td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">알레르기정보</th>
+              <td class="py-4">
+                <ul class="list-['-']">
+                  <li class="">대두, 밀, 쇠고기 함유</li>
+                  <li>계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아, 토마토를 사용한 제품과 같은 제조시설에서 제조</li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="border-b-1px">
+              <th class="font-semibold">상품선택</th>
+              <td class="flex justify-between items-end px-4 py-4 border my-4">
+                <div>
+                  <span>${item.name}</span>
+                  <div class="flex justify-center w-[84px] align-middle mt-3 border">
+                    <button><img src="./assets/icons/minus.svg" alt="감소" /></button>
+                    <span class="px-2 py-1 text-black font-semibold text-base">1</span>
+                    <button><img src="./assets/icons/plus.svg" alt="증가" /></button>
+                  </div>
+                </div>
+                <span class="text-black font-semibold">${item.price.toLocaleString()}원</span>
+              </td>
+            </tr> 
+          </table>
+      <section class="text-right py-7 font-semibold text-black">
+        <div>총 상품금액:<span class="ml-4 text-3xl mr-1">${item.price.toLocaleString()}</span>원</div>
+        <div><span class="bg-orange text-xs text-white px-2 py-1 rounded-xl font-normal">적립</span>
+          로그인 후, 적립 혜택 제공</div>
+      </section>
+        <section class="flex gap-3">
+          <button><img src="./assets/icons/like.svg" alt="찜하기" /></button>
+          <button><img src="./assets/icons/bell.svg" alt="알림" /></button>
+          <button class="bg-violet text-white rounded-sm w-[560px]">장바구니 담기</button>
+        </section>
+      </section>
+      `
+    }
+
+  })
+  console.log('템플릿!!!!!!!!!',template);
+  return template;
+}
+
+
+export function renderProductDetail(target, id){
+  insertFirst(target, createProductDetail(id));
 }
 
 
