@@ -73,22 +73,6 @@ export function deleteStorage(key){
 
 
 
-// saveStorage('name','tiger')
-
-// loadStorage('name')
-
-// deleteStorage('name')
-
-
-
-// storage.setItem('name','tiger');
-// console.log( storage.getItem('name') );
-// storage.clear()
-
-// storage.removeItem('name')
-
-
-
 
 
 

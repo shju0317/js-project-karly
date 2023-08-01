@@ -14,16 +14,22 @@
 
 
 /* swiper 왼쪽 버튼 비활성화 적용 코드 */
-.swiper-button-prev.swiper-button-disabled {
+.swiperPrev2.swiper-button-disabled,
+.swiperPrev3.swiper-button-disabled {
   @apply opacity-0;
 }
+
 
 /* swiper 오른쪽 버튼 비활성화 적용 코드 */
-.swiper-button-next.swiper-button-disabled {
+.swiperNext2.swiper-button-disabled,
+.swiperNext3.swiper-button-disabled {
   @apply opacity-0;
 }
 
-
+.swiperNext4.swiper-button-disabled,
+.swiperPrev4.swiper-button-disabled{
+  @apply block
+}
 
 .address-modal{
   @apply flex flex-col gap-3 mt-2

@@ -9,5 +9,10 @@ export * from './bindEvent.js';
 export * from './getInputValue.js';
 export * from './clearContents.js';
 export * from './controlElement.js';
+export * from './getProductList.js'
 export * from './getBestProduct.js';
+<<<<<<< HEAD
 export * from './addCartModal.js';
+=======
+// export * from './header.js';
+>>>>>>> develop
