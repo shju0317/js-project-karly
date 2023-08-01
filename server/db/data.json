@@ -175,7 +175,13 @@
       },
       "gender": null,
       "birthDay": null,
-      "moreDetails": null
+      "moreDetails": null,
+      "termsOfService": {
+        "agreements": true,
+        "privacy": true,
+        "choice": false,
+        "age": true
+      }
     },
     {
       "id": "banana123",
@@ -190,7 +196,13 @@
       },
       "gender": null,
       "birthDay": null,
-      "moreDetails": null
+      "moreDetails": null,
+      "termsOfService": {
+        "agreements": true,
+        "privacy": true,
+        "choice": true,
+        "age": true
+      }
     }
   ]
 }

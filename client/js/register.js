@@ -5,6 +5,7 @@ import {
   idReg,
   passwordReg,
   phoneReg,
+  getNodes,
 } from "../lib/index.js";
 
 const userId = getNode(".user__id");
@@ -14,7 +15,7 @@ const passwordConfirm = getNode(".confirm__password");
 const userPhone = getNode(".user__phone");
 const userBirthDay = getNode(".user__birthday");
 
-// 아이디 유효성검사
+/* ------- ID 유효성 ------------------------------------------------ */
 function idCheck() {
   let idValue = userId.value;
   // let idValid = false;
@@ -30,7 +31,7 @@ function idCheck() {
   }
 }
 
-/*  id 중복 ------------------------  */
+/* ------- ID 중복체크 ------------------------------------------------ */
 
 const idCheckButton = getNode("#idDuplicate__check");
 
@@ -39,21 +40,25 @@ async function handleIdButton() {
 
   const userData = await response.data;
 
-  console.log(userData);
-
-  userData.forEach((user) => {
+  for (let user of userData) {
     if (user.id === userId.value) {
       alert("중복된 아이디입니다.");
+      break;
     } else if (userId.value === "") {
       alert("아이디를 입력해주세요.");
+      break;
+    } else if (!idReg(userId.value)) {
+      alert("유효한 아이디를 입력해주세요.");
+      break;
     } else {
       alert("사용 가능한 아이디입니다");
     }
-  });
+  }
 }
 idCheckButton.addEventListener("click", handleIdButton);
 
-// 이메일 유효성검사
+/* ------- 이메일 유효성 ------------------------------------------------ */
+
 function emailCheck() {
   let emailValue = userEmail.value;
 
@@ -67,7 +72,7 @@ function emailCheck() {
   }
 }
 
-/*  이메일 중복 ------------------------  */
+/* ------- 이메일 중복 확인 ------------------------------------------------ */
 
 const emailCheckButton = getNode("#emailDuplicate__check");
 
@@ -76,19 +81,25 @@ async function handleEmailButton() {
 
   const userData = await response.data;
 
-  userData.forEach((user) => {
+  for (let user of userData) {
     if (user.email === userEmail.value) {
       alert("중복된 이메일입니다.");
+      break;
     } else if (userEmail.value === "") {
       alert("이메일을 입력해주세요.");
+      break;
+    } else if (!emailReg(userEmail.value)) {
+      alert("유효한 이메일을 입력해주세요.");
+      break;
     } else {
       alert("사용 가능한 이메일입니다.");
     }
-  });
+  }
 }
+
 emailCheckButton.addEventListener("click", handleEmailButton);
 
-// 비밀번호
+/* ------- 비밀번호 ------------------------------------------------ */
 function passwordCheck() {
   let pwValue = userPassword.value;
 
@@ -102,7 +113,7 @@ function passwordCheck() {
   }
 }
 
-// 비밀번호 확인
+/* ------- 비밀번호 확인 ------------------------------------------------ */
 function passwordConfirmCheck() {
   let pwComfirmValue = passwordConfirm.value;
 
@@ -116,7 +127,7 @@ function passwordConfirmCheck() {
   }
 }
 
-// 전화번호
+/* ------- 전화번호 유효성 ------------------------------------------------ */
 function phoneNumberCheck() {
   let phoneNumber = userPhone.value;
 
@@ -130,7 +141,7 @@ function phoneNumberCheck() {
   }
 }
 
-// 생년월일
+/* ------- 생년월일 ------------------------------------------------ */
 function birthdayCheck() {
   let dateValue = userBirthDay.value;
 
@@ -155,7 +166,7 @@ userBirthDay.addEventListener("input", birthdayCheck);
 
 const addressButton = getNode("#address__search");
 
-// 주소 API
+/* ------- 주소 API ------------------------------------------------ */
 function addressSearch() {
   const postcode = getNode("#postcode");
   const extraAddress = getNode("#extraAddress");
@@ -222,13 +233,59 @@ function addressSearch() {
 
 addressButton.addEventListener("click", addressSearch);
 
-// 약관동의 체크
+/* ------- 약관동의 ------------------------------------------------ */
 
-// 회원가입
+const AllChecked = getNode("#agreement__all");
+const checkBoxes = getNodes(".agreement");
+
+const agreements = {
+  use: false,
+  service: false,
+  choice: false,
+  age: false,
+};
+
+checkBoxes.forEach((item) => item.addEventListener("input", toggleCheck));
+
+function toggleCheck(e) {
+  const { checked, id } = e.target;
+  agreements[id] = checked;
+
+  checkAllStatus();
+}
+
+function checkAllStatus() {
+  const { use, service, choice, age } = agreements;
+
+  if (age && service && use && choice) {
+    AllChecked.checked = true;
+  } else {
+    AllChecked.checked = false;
+  }
+}
+
+AllChecked.addEventListener("click", (e) => {
+  const { checked } = e.target;
+  if (checked) {
+    checkBoxes.forEach((item) => {
+      item.checked = true;
+      agreements[item.id] = true;
+      item.parentNode.classList.add("active");
+    });
+  } else {
+    checkBoxes.forEach((item) => {
+      item.checked = false;
+      agreements[item.id] = false;
+      item.parentNode.classList.remove("active");
+    });
+  }
+});
+
+/* ------- 회원가입 버튼 ------------------------------------------------ */
 
 const joinButton = getNode("#registerButton");
 
-function handlerJoin(e) {
+joinButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   const postcode = getNode("#postcode");
@@ -242,9 +299,13 @@ function handlerJoin(e) {
     postcode.value == ""
   ) {
     alert("필수 입력 사항을 입력해주세요.");
-  } else {
+  } else if (
+    idReg(userId.value) ||
+    passwordReg(userPassword.value) ||
+    emailReg(userEmail.value) ||
+    phoneReg(userPhone.value) ||
+    postcode.value !== ""
+  ) {
     window.location.href = "index.html";
   }
-}
-
-joinButton.addEventListener("click", handlerJoin);
+});
