@@ -1,4 +1,5 @@
 import { attr, deleteStorage, addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
+import  { } from '../lib/dom/swiper.js';
 
 // console.log(getProductData(10));
 
