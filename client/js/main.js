@@ -1,4 +1,4 @@
-import { attr, deleteStorage, addClass, getNodes, removeClass, addClass, getNode, getProductData, insertFirst, insertLast, loadStorage, renderItemList, renderProduct, saveStorage, tiger } from '../lib/index.js';
+import {  addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
 
 // console.log(getProductData(10));
 

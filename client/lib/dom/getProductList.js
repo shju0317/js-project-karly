@@ -8,7 +8,7 @@ export function createProduct(item){
 	if(item.saleRatio === 0 && item.salePrice === 0){
 		const template = /*html*/ `
 		<div class="swiper-slide w-[250px]">
-			<a href="#">
+			<a href="http://localhost:5500/productDetail.html">
 				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>
@@ -29,7 +29,7 @@ export function createProduct(item){
 	else{
 		const template = /*html*/ `
 		<div class="swiper-slide w-[250px]">
-			<a href="#">
+			<a href="http://localhost:5500/productDetail.html">
 				<img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" />
 				<div class="mt-[16px]">
 					<h3 class="text-[16px]">${item.name}</h3>

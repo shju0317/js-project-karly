@@ -823,10 +823,6 @@ html{
   display: flex;
 }
 
-.inline-flex{
-  display: inline-flex;
-}
-
 .table{
   display: table;
 }
@@ -1576,13 +1572,6 @@ html{
   display: block;
 }
 
-/* 
-@layer utilities{
-  .box{
-    @apply absolute right-[15px] top-[258px] my-[8px] mr-[8px] mt-[8px] flex w-[250px] text-[16px] text-[22px] font-[600] text-grey1 line-through
-  }
-}
- */
 .address-modal{
   margin-top: 0.5rem;
   display: flex;
@@ -1646,6 +1635,3 @@ html{
     justify-content: center;
   }
 }
-
-
-
