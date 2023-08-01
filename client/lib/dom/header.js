@@ -37,3 +37,7 @@ categoryContainer.addEventListener('mouseleave',handleMouseOut)
 
 
 
+// const cartValue = localStorage.getItem('cart');
+// window.onload = () => {
+//   cartTotal.textContent = cartValue;
+// };
