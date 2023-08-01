@@ -133,17 +133,19 @@
 
       <!-- Main nav -->
       <nav
-        class="relative mt-5 flex h-16 items-center justify-between pt-6 text-xl text-black"
+        class="relative flex h-full w-full items-center justify-between pt-6 text-xl text-black"
       >
-        <a href="" class="nav__category h-6 px-2 pb-8 pt-1 hover:text-violet">
-          <span class="flex gap-3 font-semibold">
-            <img
-              class="aria-hidden"
-              src="./assets/images/hamburger.svg"
-              alt="카테고리"
-            />카테고리
-          </span>
-        </a>
+        <div>
+          <a href="" class="nav__category h-6 px-2 hover:text-violet">
+            <span class="flex gap-3 font-semibold">
+              <img
+                class="aria-hidden"
+                src="./assets/images/hamburger.svg"
+                alt="카테고리"
+              />카테고리
+            </span>
+          </a>
+        </div>
 
         <!-- Main menu -->
         <ul
@@ -166,7 +168,7 @@
 
         <!-- 배송안내 -->
         <div
-          class="mb-4 flex w-28 justify-center rounded-2xl border-1px border-grey4 px-2 py-1 text-sm"
+          class="mb-2 flex w-28 justify-center rounded-2xl border-1px border-grey4 px-2 py-1 text-sm"
         >
           <a href="">
             <span class="font-bold text-violet"> 샛별·낮</span>
@@ -177,9 +179,10 @@
 
       <!-- 카테고리 드롭다운 목록 -->
       <div
-        class="text-s categoryContainer static bottom-6 z-10 -mt-1 hidden hidden w-60 bg-white font-semibold text-black"
+        class="text-s categoryContainer absolute bottom-6 z-10 hidden w-60 bg-white font-semibold text-black"
+        style="top: 255px"
       >
-        <ul>
+        <ul class="w-full">
           <li class="hover:bg-gray-200">
             <a href="" class="flex gap-2 pl-2 pt-2">
               <img src="./assets/images/ca_01.svg" alt="선물하기" />
@@ -234,12 +237,72 @@
               <span>간식 · 과자 · 떡</span>
             </a>
           </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_12.svg" alt="건강식품" />
+              <span>건강식품</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_13.svg" alt="와인" />
+              <span>와인</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_14.svg" alt="전통주" />
+              <span>전통주</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_15.svg" alt="생활용품 " />
+              <span>생활용품 · 리빙 · 캠핑</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_16.svg" alt="스킨케어 메이크업" />
+              <span>스킨케어 · 메이크업</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_17.svg" alt="헤어 바디 구강" />
+              <span>헤어 · 바디 · 구강</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_18.svg" alt="주방용품" />
+              <span>주방용품</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_20.svg" alt="반려동물" />
+              <span>반려동물</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_21.svg" alt="베이비 키즈 완구" />
+              <span>베이비 · 키즈 · 완구</span>
+            </a>
+          </li>
+          <li class="hover:bg-gray-200">
+            <a href="" class="flex gap-2 pb-2 pl-2 pt-2">
+              <img src="./assets/images/ca_22.svg" alt="여행 티켓" />
+              <span>여행 · 티켓</span>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
 
     <!-- swiper slider 메인 배너 -->
-    <div class="swiper swiper1">
+    <div class="swiper swiper1 mt-6">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img class="w-full" src="./assets/images/banner01.svg" alt="" />

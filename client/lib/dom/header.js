@@ -31,4 +31,5 @@ export function handleMouseOut(){
 }
 
 navCategory.addEventListener('mouseover',handleDropdown)
-categoryContainer.addEventListener('mouseout',handleMouseOut)
+categoryContainer.addEventListener('mouseleave',handleMouseOut)
+
