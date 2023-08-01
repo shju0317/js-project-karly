@@ -9,6 +9,8 @@ const productDetail = getNode('.productDetail');
 /* 선택한 상품 id 불러오기 */
 // selectedProduct();
 
-
-let productID = await loadStorage('productID')
+const productID = localStorage.getItem('productID');
 renderProductDetail(productDetail, productID);
+
+const productID1 = await loadStorage('productID')
+renderProductDetail(productDetail, productID1);
