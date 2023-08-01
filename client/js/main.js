@@ -1,4 +1,4 @@
-import { attr, deleteStorage, getNodes, removeClass, addClass, getNode, getProductData, insertFirst, insertLast, loadStorage, renderItemList, renderProduct, saveStorage, tiger } from '../lib/index.js';
+import { attr, deleteStorage, addClass, getNodes, removeClass, addClass, getNode, getProductData, insertFirst, insertLast, loadStorage, renderItemList, renderProduct, saveStorage, tiger } from '../lib/index.js';
 
 // console.log(getProductData(10));
 
@@ -35,6 +35,7 @@ function handleMouseOut(){
 
 navCategory.addEventListener('mouseover',handleDropdown)
 categoryContainer.addEventListener('mouseout',handleMouseOut)
+
 
 
 renderItemList();

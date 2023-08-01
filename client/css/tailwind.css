@@ -12,6 +12,7 @@
   }
 }
 
+
 /* swiper 왼쪽 버튼 비활성화 적용 코드 */
 .swiperPrev2.swiper-button-disabled,
 .swiperPrev3.swiper-button-disabled {
@@ -30,3 +31,10 @@
   @apply block
 }
 
+.address-modal{
+  @apply flex flex-col gap-3 mt-2
+}
+
+.address-modal-none{
+  @apply h-0 hidden
+}
