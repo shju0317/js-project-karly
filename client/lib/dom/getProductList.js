@@ -18,7 +18,7 @@ export function createProduct(item){
 				</div>
 			</a>
 			<!-- 장바구니 아이콘 -->
-			<button class="addCart absolute right-[15px] top-[258px]">
+			<button class="absolute right-[15px] top-[258px]" data-index="${item.id}">
 				<img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
 			</button>
 		</div>
@@ -47,7 +47,7 @@ export function createProduct(item){
 				</div>
 			</a>
 			<!-- 장바구니 아이콘 -->
-			<button class="addCart absolute right-[15px] top-[258px]">
+			<button class="absolute right-[15px] top-[258px]" data-index="${item.id}">
 				<img src="./assets/icons/cart.svg" alt="장바구니 아이콘" />
 			</button>
 		</div>
