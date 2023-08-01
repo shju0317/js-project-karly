@@ -14,7 +14,7 @@
         "info": "ubuho/detail_info.jpg",
         "alt": "유부호 만두"
       },
-      "stock": 5
+      "stock": 52
     },
     {
       "id": "2",
@@ -30,7 +30,7 @@
         "info": "tangtang/detail_info.jpg",
         "alt": "풀무원 탱탱쫄면"
       },
-      "stock": 10
+      "stock": 19
     },
     {
       "id": "3",
@@ -62,7 +62,7 @@
         "info": "kangnam/detail_info.jpg",
         "alt": "강남면옥 소갈비찜"
       },
-      "stock": 2
+      "stock": 25
     },
     {
       "id": "5",
@@ -78,131 +78,120 @@
         "info": "bacon/detail_info.jpg",
         "alt": "칼리 한돈 삼겹 베이컨"
       },
-      "stock": 13
+      "stock": 138
     },
     {
       "id": "6",
-      "name": "[대구 반할만떡] 유부호만두",
-      "description": "유부로 속을 든든히 채운 군만두",
-      "price": 6900,
-      "saleRatio": 0.24,
-      "salePrice": 5244,
+      "name": "[Picard] 초콜릿 에클레어",
+      "description": "초콜릿의 진한 달콤함이 쏙",
+      "price": 7800,
+      "saleRatio": 0,
+      "salePrice": 0,
       "image": {
-        "thumbnail": "ubuho/thumbnail.jpg",
-        "view": "ubuho/detail_view.jpg",
-        "banner": "ubuho/detail_banner.jpg",
-        "info": "ubuho/detail_info.jpg",
-        "alt": "유부호 만두"
+        "thumbnail": "chocolate/thumbnail.jpg",
+        "view": "chocolate/detail_view.jpg",
+        "banner": "chocolate/detail_info.jpg",
+        "info": "chocolate/detail_info.jpg",
+        "alt": "초콜릿 에클레어"
       },
-      "stock": 5
+      "stock": 12
     },
     {
       "id": "7",
-      "name": "[풀무원] 탱탱쫄면 (4개입)",
-      "description": "튀기지 않아 부드럽고 매콤한",
-      "price": 4980,
+      "name": "썸머킹 사과 1.3kg (4~8입)",
+      "description": "여름에 만나는 풋풋한 매력",
+      "price": 12900,
       "saleRatio": 0,
       "salePrice": 0,
       "image": {
-        "thumbnail": "tangtang/thumbnail.jpg",
-        "view": "tangtang/detail_view.jpg",
-        "banner": "tangtang/detail_banner.jpg",
-        "info": "tangtang/detail_info.jpg",
-        "alt": "풀무원 탱탱쫄면"
+        "thumbnail": "apple/thumbnail.jpg",
+        "view": "apple/detail_view.jpg",
+        "banner": "apple/detail_banner.jpg",
+        "info": "apple/detail_info.jpg",
+        "alt": "사과"
       },
-      "stock": 10
+      "stock": 106
     },
     {
       "id": "8",
-      "name": "[홍대주꾸미] 주꾸미 볶음 300g (냉동)",
-      "description": "매콤달콤한 마력의 밥도둑",
-      "price": 7900,
-      "saleRatio": 0.13,
-      "salePrice": 6800,
+      "name": "[그래놀라 하우스] 그래놀라 5종 (택1)",
+      "description": "도톰하게 뭉쳐 만든 수제 그래놀라",
+      "price": 13500,
+      "saleRatio": 0.25,
+      "salePrice": 10125,
       "image": {
-        "thumbnail": "jukkumi/thumbnail.jpg",
-        "view": "jukkumi/detail_view.jpg",
-        "banner": "jukkumi/detail_banner.jpg",
-        "info": "jukkumi/detail_info.jpg",
-        "alt": "홍대 주꾸미"
+        "thumbnail": "granola/thumbnail.jpg",
+        "view": "granola/detail_view.jpg",
+        "banner": "granola/detail_banner.jpg",
+        "info": "granola/detail_info.jpg",
+        "alt": "수제 그래놀라"
       },
-      "stock": 8
+      "stock": 83
     },
     {
       "id": "9",
-      "name": "[강남면옥] 소갈비찜",
-      "description": "보는 맛과 먹는 맛 모두 푸짐",
-      "price": 29800,
+      "name": "[댄케이크] 싱글서브 버터쿠키 18입",
+      "description": "한통씩 꺼내먹는 즐거움",
+      "price": 13500,
       "saleRatio": 0,
       "salePrice": 0,
       "image": {
-        "thumbnail": "kangnam/thumbnail.jpg",
-        "view": "kangnam/detail_view.jpg",
-        "banner": "kangnam/detail_banner.jpg",
-        "info": "kangnam/detail_info.jpg",
-        "alt": "강남면옥 소갈비찜"
+        "thumbnail": "dancake/thumbnail.jpg",
+        "view": "dancake/detail_view.jpg",
+        "banner": "dancake/detail_banner.jpg",
+        "info": "dancake/detail_info.jpg",
+        "alt": "버터쿠키"
       },
-      "stock": 2
+      "stock": 24
     },
     {
       "id": "10",
-      "name": "[Kalry's] 한돈 삼겹 베이컨",
-      "description": "무항생제 한돈 삼겹살의 고소한 풍미 그대로",
-      "price": 4500,
-      "saleRatio": 0.25,
-      "salePrice": 3375,
+      "name": "[더하다] 식수용 차 3종(보리차, 옥수수수염차, 우엉차) (500mL X 6입) (택1)",
+      "description": "개운하고 깔끔한 목넘김",
+      "price": 7900,
+      "saleRatio": 0.12,
+      "salePrice": 6952,
       "image": {
-        "thumbnail": "bacon/thumbnail.jpg",
-        "view": "bacon/detail_view.jpg",
-        "banner": "bacon/detail_banner.jpg",
-        "info": "bacon/detail_info.jpg",
-        "alt": "칼리 한돈 삼겹 베이컨"
+        "thumbnail": "tea/thumbnail.jpg",
+        "view": "tea/detail_view.jpg",
+        "banner": "tea/detail_banner.jpg",
+        "info": "tea/detail_info.jpg",
+        "alt": "우엉차"
       },
-      "stock": 13
-    }
-  ],
-  "user": [
-    {
-      "id": "apple12",
-      "password": "abcd1234!",
-      "email": "apple@techit.euid",
-      "phone": "01012341234",
-      "address": {
-        "zipcode": "04624",
-        "address": "서울 중구 서애로 2",
-        "detail": "1층",
-        "extra": "(충무로 5가)"
-      },
-      "gender": null,
-      "birthDay": null,
-      "moreDetails": null,
-      "termsOfService": {
-        "agreements": true,
-        "privacy": true,
-        "choice": false,
-        "age": true
-      }
+      "stock": 89
     },
     {
-      "id": "banana123",
-      "password": "abcd1234!",
-      "email": "banana123@techit.euid",
-      "phone": "01011111111",
-      "address": {
-        "zipcode": "06593",
-        "address": "서울 서초구 고무래로 4",
-        "detail": "2층",
-        "extra": " (반포동)"
+      "id": "11",
+      "name": "[햇반] 매일잡곡밥 210g*36입",
+      "description": "고소함 가득 담은 잡곡밥",
+      "price": 39900,
+      "saleRatio": 0.10,
+      "salePrice": 35910,
+      "image": {
+        "thumbnail": "rice/thumbnail.jpg",
+        "view": "rice/detail_view.jpg",
+        "banner": "rice/detail_banner.jpg",
+        "info": "rice/detail_info.jpg",
+        "alt": "햇반"
       },
-      "gender": null,
-      "birthDay": null,
-      "moreDetails": null,
-      "termsOfService": {
-        "agreements": true,
-        "privacy": true,
-        "choice": true,
-        "age": true
-      }
+      "stock": 57
+    },
+    {
+      "id": "12",
+      "name": "[콜린스 다이닝] 콩 샐러드",
+      "description": "네 가지 콩과 퀴노아로 만든 샐러드",
+      "price": 9500,
+      "saleRatio": 0.11,
+      "salePrice": 8455,
+      "image": {
+        "thumbnail": "salad/thumbnail.jpg",
+        "view": "salad/detail_view.jpg",
+        "banner": "salad/detail_banner.jpg",
+        "info": "salad/detail_info.jpg",
+        "alt": "다이어트 도시락"
+      },
+      "stock": 112
     }
   ]
 }
+

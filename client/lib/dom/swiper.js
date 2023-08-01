@@ -164,6 +164,7 @@ async function clickHandler(e){
     // 현재 슬라이드 인덱스 설정
 		const newSlideIndex = 0;
 		swiper4.slideTo(newSlideIndex, 0, false)
+
   }
 }
 
