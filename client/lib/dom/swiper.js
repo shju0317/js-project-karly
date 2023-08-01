@@ -1,5 +1,5 @@
 import { saveStorage } from "../utils/storage.js";
-import { getNode } from "./getNode.js";
+import { getNode, getNodes } from "./getNode.js";
 
 
 
@@ -70,15 +70,17 @@ export const swiper4 = new Swiper('.swiper4', {
 
 
 
-
 const swiperWrapper2 = getNode('.swiperWrapper2')
 const swiperWrapper3 = getNode('.swiperWrapper3')
 const asideBox = getNode('.asideBox')
 
 export async function clickHandler(e){
-  if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
-		e.preventDefault(e)
 
+
+  if(e.target.tagName === 'IMG' || e.target.closest('.swiper-slide')){
+		// e.preventDefault(e)
+
+		
     const slideElement = e.target.closest('.swiper-slide') || e.target;
     const srcValue = slideElement.querySelector('img').getAttribute('src');
 

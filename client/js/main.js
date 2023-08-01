@@ -46,6 +46,8 @@ renderItemList();
 /*-------------장바구니 추가 ------------------------------------------*/
 const cartTotal = getNode('.cartTotal');
 const addCart = getNodes('.addCart');
+const swiperWrapper2 = getNode('.swiperWrapper2')
+const swiperWrapper3 = getNode('.swiperWrapper3')
 
 let totalCart = 0;
 
@@ -53,35 +55,41 @@ let totalCart = 0;
 let isModalInitialized = false;
 
 function handleAddCartModal(e) {
+  const button = e.target.closest('button')
+
   const addCartModal = getNode('.addCartModalContainer');
   const modalClose = getNode('.addCartModal__button__modalClose');
   const modalAdd = getNode('.addCartModal__button__modalAdd');
   const productName = e.target.dataset.product;
 
-  if (!isModalInitialized) {
-    modalClose.addEventListener('click', () => {
-      addClass(addCartModal, 'hidden');
-    });
-
-    modalAdd.addEventListener('click', () => {
-      console.log("totalCart");
-      ++totalCart;
-      addClass(cartTotal, 'h-6');
-      addClass(cartTotal, 'w-5');
-      cartTotal.textContent = `${totalCart}`;
-      addClass(addCartModal, 'hidden');
-    });
-
-    isModalInitialized = true;
+  if(button){
+    if (!isModalInitialized) {
+      modalClose.addEventListener('click', () => {
+        addClass(addCartModal, 'hidden');
+      });
+  
+      modalAdd.addEventListener('click', () => {
+        console.log("totalCart");
+        ++totalCart;
+        addClass(cartTotal, 'h-6');
+        addClass(cartTotal, 'w-5');
+        cartTotal.textContent = `${totalCart}`;
+        addClass(addCartModal, 'hidden');
+      });
+  
+      isModalInitialized = true;
+    }
+  
+    removeClass(addCartModal, 'hidden');
   }
-
-  removeClass(addCartModal, 'hidden');
-
-
   
 }
 
-addCart.forEach(cart => {
-  cart.addEventListener('click', handleAddCartModal);
-});
+swiperWrapper2.addEventListener('click', handleAddCartModal)
+swiperWrapper3.addEventListener('click', handleAddCartModal)
+
+// const addCart = getNodes('.addCart');
+// addCart.forEach(cart => {
+//   cart.addEventListener('click', handleAddCartModal);
+// });
 

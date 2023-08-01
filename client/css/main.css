@@ -636,6 +636,14 @@ html{
   top: 34px;
 }
 
+.z-0{
+  z-index: 0;
+}
+
+.z-10{
+  z-index: 10;
+}
+
 .z-30{
   z-index: 30;
 }
@@ -646,21 +654,6 @@ html{
 
 .float-right{
   float: right;
-}
-
-.clear-both{
-  clear: both;
-}
-.z-0{
-  z-index: 0;
-}
-
-.z-10{
-  z-index: 10;
-}
-
-.z-50{
-  z-index: 50;
 }
 
 .clear-both{
@@ -792,10 +785,6 @@ html{
   display: flex;
 }
 
-.h-11{
-  height: 2.75rem;
-}
-
 .hidden{
   display: none;
 }
@@ -844,10 +833,12 @@ html{
   height: 223px;
 }
 
-.h-\[586px\]{
-  height: 586px;
 .h-\[292px\]{
   height: 292px;
+}
+
+.h-\[586px\]{
+  height: 586px;
 }
 
 .h-\[60px\]{
@@ -915,9 +906,12 @@ html{
 }
 
 .w-60{
+  width: 15rem;
+}
 
 .w-80{
   width: 20rem;
+}
 
 .w-\[1050px\]{
   width: 1050px;
@@ -1059,10 +1053,12 @@ html{
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.overflow-hidden{
-  overflow: hidden;
 .overflow-auto{
   overflow: auto;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .rounded{
@@ -1462,6 +1458,14 @@ html{
   display: block;
 }
 
+/* 
+@layer utilities{
+  .box{
+    @apply absolute right-[15px] top-[258px] my-[8px] mr-[8px] mt-[8px] flex w-[250px] text-[16px] text-[22px] font-[600] text-grey1 line-through
+  }
+}
+ */
+
 .after\:hidden::after{
   content: var(--tw-content);
   display: none;
@@ -1510,17 +1514,4 @@ html{
   }
 }
 
-
-  .md\:max-w-screen-sm{
-    max-width: 640px;
-  }
-
-  .md\:items-center{
-    align-items: center;
-  }
-
-  .md\:justify-center{
-    justify-content: center;
-  }
-}
 
