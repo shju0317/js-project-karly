@@ -56,17 +56,8 @@ function createProduct(item){
 	}
 
   /* 상품정보 렌더링 */
-export function renderProduct(target, data){
-  // console.log(target.className.includes('productList'));
-
-    insertFirst(target, createProduct(data))
-
-  // if(target.className.includes('productList')){ 
-  //   insertFirst(target, createProduct(data))
-  // }else if(target.className.includes('productDetail')){
-  //   insertFirst(target, createProductDetail(data))
-  // }
-
+export function renderProduct(target, data){  
+  insertFirst(target, createProduct(data))
 }
 
 
@@ -159,17 +150,17 @@ export function createProductDetail(id){
                 <div>
                   <span>${item.name}</span>
                   <div class="flex justify-center w-[84px] align-middle mt-3 border">
-                    <button><img src="./assets/icons/minus.svg" alt="감소" /></button>
+                    <button class="minusBtn"><img src="./assets/icons/minus.svg" alt="감소" /></button>
                     <span class="productCnt px-2 py-1 text-black font-semibold text-base">1</span>
-                    <button><img src="./assets/icons/plus.svg" alt="증가" /></button>
+                    <button class="plusBtn"><img src="./assets/icons/plus.svg" alt="증가" /></button>
                   </div>
                 </div>
-                <span class="totalCost text-black font-semibold">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}원</span>
+                <span class="text-black font-semibold"><span class="totalCost">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}</span>원</span>
               </td>
             </tr> 
           </table>
       <section class="text-right py-7 font-semibold text-black">
-        <div>총 상품금액:<span class="totalCost ml-4 text-3xl mr-1">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}</span>원</div>
+        <div>총 상품금액:<span class="totalCost2 ml-4 text-3xl mr-1">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}</span>원</div>
         <div><span class="bg-orange text-xs text-white px-2 py-1 rounded-xl font-normal">적립</span>
           로그인 후, 적립 혜택 제공</div>
       </section>
@@ -204,62 +195,3 @@ export function createProductDetail(id){
 export function renderProductDetail(target, id){
   insertFirst(target, createProductDetail(id));
 }
-
-
-
-//============================================================================
-
-/* 상품 수량별 총액 계산 */
-const productCnt = getNode('.productCnt');
-const totalCost = getNode('.totalCost');
-let productCntTextContent = 1;
-// let cnt = +productCnt.textContent;
-console.log('이거',productCnt);
-
-async function fetchData() {
-  try {
-    // const response = await fetch('http://localhost:3000/products');
-    // const jsondata = await response.json();
-
-    // totalCost.textContent = numberComma((jsondata[index - 1].price) * productCountTextContent) + `원`;
-    let cost = +totalCost.textContent;
-    console.log(cost);
-    // cost = cost*
-    
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
-const addProduct = getNode('.addProduct');
-
-function handleCountUp() {
-  ++productCntTextContent;
-  productCnt.textContent = productCntTextContent;
-  // fetchData();
-}
-
-// addProduct.addEventListener('click', handleCountUp);
-
-/* 물건 갯수 빼기 */
-// const removeProduct = getNode('.removeProduct')
-// function handleModalCartCountDown(){
-//   if(productCountTextContent > 1){
-//     --productCountTextContent;
-//     productCount.textContent = productCountTextContent;
-//     fetchData();
-//   } 
-// }
-// removeProduct.addEventListener('click',handleModalCartCountDown)
-
-
-
-
-
-/* 장바구니 모달창 갯수 초기화 */
-// const resetCount = getNode('.addCartModal__button');
-// function handleModalCartCountReset() {
-//   productCountTextContent = 1;
-//   productCount.textContent = productCountTextContent;
-// }
-// resetCount.addEventListener('click', handleModalCartCountReset);
