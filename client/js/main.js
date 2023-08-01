@@ -1,4 +1,4 @@
-import {  addClass, getNodes, removeClass, getNode, renderItemList, } from '../lib/index.js';
+import {  addClass, attr, removeClass, getNode, renderItemList, } from '../lib/index.js';
 
 
 renderItemList();
@@ -6,7 +6,6 @@ renderItemList();
 
 /*-------------장바구니 추가 ------------------------------------------*/
 const cartTotal = getNode('.cartTotal');
-// const addCart = getNodes('.addCart');
 const swiperWrapper2 = getNode('.swiperWrapper2')
 const swiperWrapper3 = getNode('.swiperWrapper3')
 
@@ -21,6 +20,14 @@ function handleAddCartModal(e) {
   const addCartModal = getNode('.addCartModalContainer');
   const modalClose = getNode('.addCartModal__button__modalClose');
   const modalAdd = getNode('.addCartModal__button__modalAdd');
+
+  // 클릭한 대상의 data-index값 불러오기
+  
+  const cartIndex = e.target.closest('img')
+  const index = attr(cartIndex,'alt');
+  console.log(index);
+
+
 
   if(button){
     if (!isModalInitialized) {
@@ -47,12 +54,6 @@ swiperWrapper2.addEventListener('click', handleAddCartModal)
 swiperWrapper3.addEventListener('click', handleAddCartModal)
 
 
-// addCart.forEach(cart => {
-//   cart.addEventListener('click', handleAddCartModal);
-// });
-
-
-
 
 
 // // data.json 불러오기
@@ -66,6 +67,7 @@ function loadData(index){
     })
     .catch(refError)
 }
+
 
 
 
