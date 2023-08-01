@@ -29,13 +29,11 @@ function createProduct(item){
           <span class="hidden">${item.id}</span>
           <span>${item.name}</span>
           <div>
-            <span class="sr-only">할인율</span>
             ${ +item.saleRatio === 0 ? '' : 
-            /* html */`<span class="mr-2 text-2xl font-semibold text-orange">${item.saleRatio*100}%</span>`}
+            /* html */`<span class="sr-only">할인율</span><span class="mr-2 text-2xl font-semibold text-orange">${item.saleRatio*100}%</span>`}
 
-            <span class="sr-only">할인가</span>
             ${ +item.salePrice === 0 ? 
-            '': /* html */`<span class="text-2xl font-semibold">${item.salePrice.toLocaleString()}원</span>`}
+            '': /* html */`<span class="sr-only">할인가</span><span class="text-2xl font-semibold">${item.salePrice.toLocaleString()}원</span>`}
           </div>
           <span class="sr-only">정가</span>
           ${+item.salePrice === 0 ? 
@@ -80,40 +78,45 @@ const productList = getNode('.productList');
 const response = await tiger.get('http://localhost:3000/products');
 const itemList = response.data;
 
-
-/* 선택한 상품 id 불러오기 */
-// export function selectedProduct(){
-
-//   bindEvent(productList,'click',(item)=>{
-//     const figure = item.target.closest('figure');
-    
-//     console.log('안: '+figure.querySelector('figcaption > span').textContent);
-//     state.id = figure.querySelector('figcaption > span').textContent;
-//     console.log('state.id: ' + state.id);
-//     localStorage.setItem('productID', state.id);
-//     return state.id;
-//     }
-//   )
-// }
-
-
 /* 상품 상세정보 생성 */
 export function createProductDetail(id){
   let template = '';
+
+  if(!id){
+    template = /*html*/ `
+      <section class="mx-auto">
+        <h1 class="text-2xl font-bold">해당 상품을 찾을 수 없습니다 :(</h1>
+        <img
+          src="./assets/icons/error.svg"
+          alt="해당 상품을 찾을 수 없습니다"
+        />
+      </section>
+    `
+  }
 
   itemList.forEach((item) => {
     if(item.id === id){
       console.log('id 불러왔다!!');
       template = /*html*/ `
-      <section>
-        <img src="./assets/${item.image.thumbnail}" alt="${item.image.alt}" class="w-[900px]"/>
-      </section>
-      <section class="flex flex-col">
+      <section class="flex">
+        <section class="">
+          <img src="./assets/${item.image.thumbnail}" alt="${item.image.alt} " />
+        </section>
+        <section class="flex flex-col ml-4">
           <div class="flex flex-col gap-4 mb-5">
             <span class="text-xl font-bold">샛별배송</span>
             <span class="text-[28px] text-black font-semibold">${item.name}</span>
             <span class="text-grey1">${item.description}</span>
-            <span class="text-3xl text-black font-semibold">${item.price.toLocaleString()}<span class="text-base ml-1">원</span></span>
+            <div class="flex">
+            ${ +item.saleRatio === 0 ? 
+              '' : /* html */`<span class="sr-only">할인율</span><span class="mr-2 text-3xl font-semibold text-orange">${item.saleRatio*100}%</span>`}
+            ${ +item.salePrice === 0 ? 
+              '': /* html */`<span class="sr-only">할인가</span><span class="text-3xl text-black font-semibold">${item.salePrice.toLocaleString()}<span class="text-base ml-1">원</span></span>`}
+            </div>
+              <span class="sr-only">정가</span>
+              ${+item.salePrice === 0 ? 
+                /* html */`<span class="text-3xl text-black font-semibold">${item.price.toLocaleString()}원</span>` : 
+                /* html */`<span class="text-base text-grey1 line-through">${item.price.toLocaleString()}원</span>`}
             <span class="text-violet font-semibold">로그인 후, 적립 혜택이 제공됩니다.</span>
           </div> 
           <table class="text-left text-xs">
@@ -161,12 +164,12 @@ export function createProductDetail(id){
                     <button><img src="./assets/icons/plus.svg" alt="증가" /></button>
                   </div>
                 </div>
-                <span class="text-black font-semibold">${item.price.toLocaleString()}원</span>
+                <span class="text-black font-semibold">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}원</span>
               </td>
             </tr> 
           </table>
       <section class="text-right py-7 font-semibold text-black">
-        <div>총 상품금액:<span class="ml-4 text-3xl mr-1">${item.price.toLocaleString()}</span>원</div>
+        <div>총 상품금액:<span class="ml-4 text-3xl mr-1">${+item.salePrice === 0 ? item.price.toLocaleString() : item.salePrice.toLocaleString()}</span>원</div>
         <div><span class="bg-orange text-xs text-white px-2 py-1 rounded-xl font-normal">적립</span>
           로그인 후, 적립 혜택 제공</div>
       </section>
@@ -176,11 +179,24 @@ export function createProductDetail(id){
           <button class="bg-violet text-white rounded-sm w-[560px]">장바구니 담기</button>
         </section>
       </section>
+      </section>
+      <section class="">
+      <ul
+        class="flex h-14 justify-around border font-semibold leading-[56px] text-black text-violet"
+      >
+        <li>상품설명</li>
+        <li>상세정보</li>
+        <li>후기</li>
+        <li>문의</li>
+      </ul>
+      <div class="pt-10">
+        <img src="./assets/${item.image.view}" alt="${item.image.alt} " class="w-full"/>
+        <img src="./assets/${item.image.info}" alt="${item.image.alt} " class="w-full"/>
+      </div>
+    </section>
       `
     }
-
   })
-  console.log('템플릿!!!!!!!!!',template);
   return template;
 }
 
