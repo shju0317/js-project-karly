@@ -7,7 +7,8 @@
 
 ## 💜Karly Clone Coding🛒
 - 📅개발 기간 : 2023. 07. 28 ~ 2023. 08. 02
-
+- [📑발표자료](https://docs.google.com/presentation/d/1nFO8Z8hW0dYeKs8GheWNfc6Zeaj1I3wIgI2JctmnzzU/edit?pli=1#slide=id.p)
+  
 
 ---
 
