@@ -1,11 +1,11 @@
-#😎멋쟁이사자처럼 프론트엔드 스쿨 6기 Javascript Project🦁
+# 😎멋쟁이사자처럼 프론트엔드 스쿨 6기 Javascript Project🦁
 ------------------
 ## 💪6️⃣조 6️⃣캔두잇!
   ![32811_63519](https://github.com/GwonH/project-taing/assets/130988491/0e898acb-6ad5-48da-abcd-c70ce5104a23)
 
 
 
-##💜Karly Clone Coding🛒
+## 💜Karly Clone Coding🛒
 - 📅개발 기간 : 2023. 07. 28 ~ 2023. 08. 02
 
 
