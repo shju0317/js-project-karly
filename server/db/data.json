@@ -78,7 +78,7 @@
         "info": "bacon/detail_info.jpg",
         "alt": "칼리 한돈 삼겹 베이컨"
       },
-      "stock": 138
+      "stock": 48
     },
     {
       "id": "6",
@@ -98,7 +98,7 @@
     },
     {
       "id": "7",
-      "name": "썸머킹 사과 1.3kg (4~8입)",
+      "name": "[Kalry's] 썸머킹 사과 1.3kg (4~8입)",
       "description": "여름에 만나는 풋풋한 매력",
       "price": 12900,
       "saleRatio": 0,
