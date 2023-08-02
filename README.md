@@ -46,8 +46,8 @@
 
 ![3](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/33f8e097-5dad-4667-be5c-55c62a7f5470)
 
-🎈 상단 팝업 
-🎈 카테고리 메뉴 드롭다운
+🎈 상단 팝업 </br>
+🎈 카테고리 메뉴 드롭다운 </br>
 🎈 swiper를 이용한 메인 배너 슬라이더 구현
 
 ![3322](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/6a234504-22d0-43ae-8135-1434551a6dab)
