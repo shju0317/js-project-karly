@@ -1,6 +1,6 @@
 #😎멋쟁이사자처럼 프론트엔드 스쿨 6기 Javascript Project🦁
 ------------------
-##💪6️⃣조 6️⃣캔두잇!
+## 💪6️⃣조 6️⃣캔두잇!
   ![32811_63519](https://github.com/GwonH/project-taing/assets/130988491/0e898acb-6ad5-48da-abcd-c70ce5104a23)
 
 
@@ -51,11 +51,11 @@
 🎈 swiper를 이용한 메인 배너 슬라이더 구현
 
 ![3322](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/6a234504-22d0-43ae-8135-1434551a6dab)
-🎈 장바구니 기능
+</br> 🎈 장바구니 기능
 
 
 ![656346](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/bf9aa2ed-4378-4e1d-814d-1e6871ee6872)
-🎈 swiper를 이용한 슬라이더 구현과 상품 상세페이지 연동
+</br> 🎈 swiper를 이용한 슬라이더 구현과 상품 상세페이지 연동
 
 ---
 
@@ -64,11 +64,11 @@
 ![image](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/c2461d4f-2003-4e6a-a41d-3fe726b04479)
 
 ![best](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/8975f9dd-ecfa-47d1-aa1b-9d7f51bc0cbb)
-🎈 베스트 상품 페이지에서 상세페이지로의 연동
+</br> 🎈 베스트 상품 페이지에서 상세페이지로의 연동
 
 
 ![best_detail](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/2654a7b5-9c90-4b8d-887c-9a975399e7fc)
-🎈 상품 수량 선택에 따른 총 금액 계산 파트 구현
+</br> 🎈 상품 수량 선택에 따른 총 금액 계산 파트 구현
 
 ---
 ### 3. 회원가입 페이지(백수빈)
@@ -77,13 +77,13 @@
 
 ![register_id](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/361d77bf-4d2e-4621-bc8a-dced84070c60)
 
-🎈 중복 id 유효성 검사 
+</br> 🎈 중복 id 유효성 검사
 
 ![register_address](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/66af2d22-011f-43d8-8d17-570869702f1e)
-🎈 주소API 기능
+</br> 🎈 주소API 기능
 
 ![register_check](https://github.com/JS-Project-Karly-6-can-do-it/js-project-karly/assets/130988491/d814ade7-dabb-4210-982e-97a80ec6d41d)
-🎈 전체 동의 체크박스
+</br> 🎈 전체 동의 체크박스
 
 
 ---
