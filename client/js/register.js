@@ -24,10 +24,8 @@ function idCheck() {
 
   if (!idReg(idValue)) {
     idError.classList.remove("invisible");
-    return false;
   } else {
     idError.classList.add("invisible");
-    return true;
   }
 }
 
@@ -52,6 +50,7 @@ async function handleIdButton() {
       break;
     } else {
       alert("사용 가능한 아이디입니다");
+      break;
     }
   }
 }
@@ -66,7 +65,6 @@ function emailCheck() {
 
   if (!emailReg(emailValue)) {
     emailError.classList.remove("invisible");
-    return false;
   } else {
     emailError.classList.add("invisible");
   }
@@ -93,6 +91,7 @@ async function handleEmailButton() {
       break;
     } else {
       alert("사용 가능한 이메일입니다.");
+      break;
     }
   }
 }
@@ -140,7 +139,6 @@ function phoneNumberCheck() {
     numberError.classList.add("invisible");
   }
 }
-
 /* ------- 생년월일 ------------------------------------------------ */
 function birthdayCheck() {
   let dateValue = userBirthDay.value;
