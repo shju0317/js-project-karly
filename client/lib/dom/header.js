@@ -1,4 +1,4 @@
-import { getNode, removeClass, addClass } from "../index.js";
+import { attr, getNode, removeClass, addClass } from "../index.js";
 
 /* 메인 상단 팝업 닫기 */
 const headerXbutton = document.querySelector('.headerPopup__xButton');
@@ -11,7 +11,8 @@ export function handleRemovePopup(){
   headerPopup.style.transform = 'translateY(-100%)';
   setTimeout(() => {
     headerPopup.remove();
-  }, 200);
+    attr(categoryContainer,'style', 'top: 213px')
+  }, 200); 
 }
 headerXbutton.addEventListener('click',handleRemovePopup)
 
@@ -31,4 +32,12 @@ export function handleMouseOut(){
 }
 
 navCategory.addEventListener('mouseover',handleDropdown)
-categoryContainer.addEventListener('mouseout',handleMouseOut)
+categoryContainer.addEventListener('mouseleave',handleMouseOut)
+
+
+
+
+// const cartValue = localStorage.getItem('cart');
+// window.onload = () => {
+//   cartTotal.textContent = cartValue;
+// };
