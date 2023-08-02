@@ -59,6 +59,7 @@ export function createProduct(item){
 }
 
 
+
 export function renderMainProduct(target, data){
 	insertFirst(target, createProduct(data))
 }
@@ -69,11 +70,31 @@ const swiperWrapper3 = getNode('.swiperWrapper3')
 
 export async function renderItemList(){
   const response = await tiger.get('http://localhost:3000/products')    // promise 객체
-  const itemList = response.data;
+  const sortedList = response.data;
 
-	itemList.forEach((item)=>{
-		renderMainProduct(swiperWrapper2, item)
-		renderMainProduct(swiperWrapper3, item)
+  const itemList2 = sortedList.slice(); // itemList2와 itemList3에 복제된 itemList 할당
+  const itemList3 = sortedList.slice();
+
+  shuffle(itemList2);
+  shuffle(itemList3);
+
+  itemList2.forEach((item)=>{
+    renderMainProduct(swiperWrapper2, item)
+  })
+
+  itemList3.forEach((item)=>{
+    renderMainProduct(swiperWrapper3, item)
   })
 }
 
+function shuffle(array) {
+  let currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
